@@ -1,4 +1,5 @@
-# IvyLogViewer - Beta
+# IvyLogViewer - Beta [![Build Status](https://travis-ci.org/ivy-supplements/ivy-log-viewer.svg?branch=master)](https://travis-ci.org/ivy-supplements/ivy-log-viewer)
+
 Started as a simple JavaFX test project, but is actually useful as a small and simple log viewer.
 
 ![screenshot](ivy-log-viewer-screenshot.png)
