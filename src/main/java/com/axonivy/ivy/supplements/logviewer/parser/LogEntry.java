@@ -4,10 +4,10 @@ public class LogEntry
 {
   private String originalTitleLine;
   private String time;
-  private String severity;
+  private LogLevel severity;
   private String details;
 
-  public LogEntry(String originalTitleLine, String time, String severity)
+  public LogEntry(String originalTitleLine, String time, LogLevel severity)
   {
     this.originalTitleLine = originalTitleLine;
     this.time = time;
@@ -46,7 +46,7 @@ public class LogEntry
     return time;
   }
 
-  public String getSeverity()
+  public LogLevel getSeverity()
   {
     return severity;
   }

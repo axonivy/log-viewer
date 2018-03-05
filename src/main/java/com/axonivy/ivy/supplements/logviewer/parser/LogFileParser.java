@@ -50,13 +50,13 @@ public class LogFileParser
     LogEntry entry = null;
     if (parts.length >= 2)
     {
-      entry = new LogEntry(line, parts[0], parts[1]);
+      entry = new LogEntry(line, parts[0], LogLevel.fromValue(parts[1]));
     }
     else
     {
       if (!line.trim().equals("") || !parts[0].trim().equals(""))
       {
-        entry = new LogEntry(line, parts[0], "DEBUG" /* we set unparsable entries to DEBUG */);
+        entry = new LogEntry(line, parts[0], LogLevel.DEBUG /* we set unparsable entries to DEBUG */);
       }
     } 
     if (entry != null)
@@ -70,7 +70,7 @@ public class LogFileParser
     LogEntry entry = logEntries.get(logEntries.size() - 1);
     if (entry == null)
     {
-      entry = new LogEntry("Parse ERROR", "Parse Error", "Parse Error");
+      entry = new LogEntry("Parse ERROR", "Parse Error", LogLevel.DEBUG);
     }
 
     entry.addDetailLine(line);

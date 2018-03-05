@@ -22,7 +22,11 @@ public class TestLogFileParser
     LogFileParser logFileParser = new LogFileParser(testLogFile);
     List<LogEntry> logList = logFileParser.parse();
 
-    assertThat(logList).hasSize(890);
+    assertThat(logList).hasSize(891);
+    
+    List<LogEntry> fatals = logList.stream().filter(e -> e.getSeverity().equals(LogLevel.FATAL))
+            .collect(Collectors.toList());
+    assertThat(fatals).hasSize(1);
 
     List<LogEntry> errors = logList.stream().filter(e -> e.getSeverity().equals(LogLevel.ERROR))
             .collect(Collectors.toList());

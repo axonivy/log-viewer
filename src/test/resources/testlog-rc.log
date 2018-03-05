@@ -1173,6 +1173,8 @@
   No state saving method defined, assuming default server state saving
 14:47:07.860 ERROR [ch.ivyteam.ivy.webserver.internal.exception] [http-nio-8080-exec-5] [requestId=229, executionContext=SYSTEM] 
   Special Test ERROR
+14:47:07.868 FATAL [ch.ivyteam.ivy.webserver.internal.exception] [http-nio-8080-exec-6] [requestId=229, executionContext=SYSTEM] 
+  Special FATAL
 14:47:19.092 WARN [runtimelog.TestAPP.AngularWfDemo.request] [http-nio-8080-exec-1] [requestId=297, executionContext=SYSTEM, client=127.0.0.1] 
   Problem while processing request 'http://localhost:8080/ivy/pro/TestAPP/AngularWfDemo$1/1614CC1E96512AEA/createTestTask.ivp'
     [errorId=161519F22B42A867, requestId=297, executionContext=SYSTEM, client=127.0.0.1]

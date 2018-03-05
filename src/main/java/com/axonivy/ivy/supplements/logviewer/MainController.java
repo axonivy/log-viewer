@@ -86,10 +86,11 @@ public class MainController implements Initializable
     });
 
     minimalLevel.getItems().addAll(FXCollections.observableArrayList(
-            LogLevel.ERROR,
-            LogLevel.WARN,
-            LogLevel.INFO,
-            LogLevel.DEBUG));
+            LogLevel.FATAL.name(),
+            LogLevel.ERROR.name(),
+            LogLevel.WARN.name(),
+            LogLevel.INFO.name(),
+            LogLevel.DEBUG.name()));
 
     minimalLevel.setOnAction(event -> {
       selectedLogLevel = minimalLevel.getValue();
@@ -152,7 +153,8 @@ public class MainController implements Initializable
 
     for (LogEntry entry : logEntries)
     {
-      if (!entry.getSeverity().equals(selectedLogLevel))
+      LogLevel logLevel = LogLevel.fromValue(selectedLogLevel);
+      if (entry.getSeverity().ordinal() < logLevel.ordinal())
       {
         continue;
       }
@@ -172,23 +174,23 @@ public class MainController implements Initializable
     }
   }
 
-  private static ImageView getIcon(String level)
+  private static ImageView getIcon(LogLevel level)
   {
 
     String imageName;
-    // TODO load the images static, use enums etc
+    // TODO load the images static
     switch (level)
     {
-      // just for fun
-      case LogLevel.ERROR:
+      case FATAL:
+      case ERROR:
         imageName = "ab_error_16.png";
         break;
 
-      case LogLevel.WARN:
+      case WARN:
         imageName = "ab_warning_16.png";
         break;
 
-      case LogLevel.INFO:
+      case INFO:
         imageName = "ab_information_16.png";
         break;
 
