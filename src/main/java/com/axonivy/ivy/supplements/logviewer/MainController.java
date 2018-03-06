@@ -187,6 +187,8 @@ public class MainController implements Initializable
     switch (level)
     {
       case FATAL:
+    	imageName = "ns_bomb_16.png";
+    	break;
       case ERROR:
         imageName = "ab_error_16.png";
         break;
