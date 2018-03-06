@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
@@ -21,10 +22,11 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.scene.control.Label;
 
 public class MainController implements Initializable
 {
@@ -72,6 +74,25 @@ public class MainController implements Initializable
   @Override
   public void initialize(URL arg0, ResourceBundle arg1)
   {
+	treeAnchorPane.setOnDragOver(event -> {
+            Dragboard dragboard = event.getDragboard();
+            if (dragboard.hasFiles()) {
+                event.acceptTransferModes(TransferMode.COPY);
+            } else {
+                event.consume();
+            }
+    });
+
+	treeAnchorPane.setOnDragDropped(event -> {
+            Dragboard dragboard = event.getDragboard();
+            boolean success = false;
+            if (dragboard.hasFiles()) {
+                success = true;
+                openFile(dragboard.getFiles().get(0));
+            }
+            event.setDropCompleted(success);
+            event.consume();
+    });
 
     menuPointOpen.setOnAction(event -> {
       openFileDialog();
@@ -189,6 +210,7 @@ public class MainController implements Initializable
       case FATAL:
     	imageName = "ns_bomb_16.png";
     	break;
+
       case ERROR:
         imageName = "ab_error_16.png";
         break;
