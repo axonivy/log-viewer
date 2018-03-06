@@ -24,6 +24,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.scene.control.Label;
 
 public class MainController implements Initializable
 {
@@ -64,6 +65,9 @@ public class MainController implements Initializable
   private TextField searchField;
 
   private String textToSearch = "";
+
+  @FXML
+  private Label filepathLabel;
 
   @Override
   public void initialize(URL arg0, ResourceBundle arg1)
@@ -133,6 +137,7 @@ public class MainController implements Initializable
     {
       logEntries = logFileParser.parse();
       displayLogEntries();
+      filepathLabel.setText(file.getAbsolutePath());
     }
     catch (Exception ex)
     {
@@ -145,7 +150,7 @@ public class MainController implements Initializable
     TreeItem<String> rootItem = new TreeItem<String>("All");
     logTreeView.setRoot(rootItem);
     rootItem.setExpanded(true);
-    
+
     if (logEntries == null)
     {
       return;

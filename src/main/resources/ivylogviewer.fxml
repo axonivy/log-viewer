@@ -31,13 +31,14 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane fx:id="treeAnchorPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane fx:id="treeAnchorPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="445.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
       <children>
-      	<TreeView fx:id="logTreeView" layoutY="44.0" prefHeight="331.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="44.0" />
+      	<TreeView fx:id="logTreeView" layoutY="44.0" prefHeight="302.0" prefWidth="640.0" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="44.0" />
             <ComboBox fx:id="minimalLevel" layoutX="108.0" layoutY="10.0" prefWidth="150.0" />
             <Label layoutX="14.0" layoutY="14.0" text="Show Level:" />
             <Button fx:id="searchButton" defaultButton="true" layoutX="574.0" layoutY="10.0" mnemonicParsing="false" text="Search" AnchorPane.rightAnchor="14.0" />
             <TextField fx:id="searchField" layoutX="418.0" layoutY="10.0" prefHeight="25.0" prefWidth="228.0" AnchorPane.rightAnchor="74.0" />
+            <Label fx:id="filepathLabel" layoutX="14.0" layoutY="87.0" prefHeight="17.0" prefWidth="611.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
       </children>
     </AnchorPane>
   </children>
