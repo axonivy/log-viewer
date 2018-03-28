@@ -7,6 +7,7 @@ public class LogEntry
   private LogLevel severity;
   private String details;
 
+  
   public LogEntry(String originalTitleLine, String time, LogLevel severity)
   {
     this.originalTitleLine = originalTitleLine;
@@ -59,6 +60,6 @@ public class LogEntry
   @Override
   public String toString()
   {
-    return getTitleLine();
+    return getDetails();
   }
 }

@@ -19,7 +19,7 @@
         <Menu mnemonicParsing="false" text="File">
           <items>
             <MenuItem fx:id="menuPointOpen" mnemonicParsing="false" text="Open…" />
-            <MenuItem fx:id="menuPointReload" mnemonicParsing="false" text="Reload" />
+            <MenuItem fx:id="menuPointCopy" mnemonicParsing="false" text="Copy" />
             <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem fx:id="menuPointQuit" mnemonicParsing="false" text="Quit" />
           </items>
