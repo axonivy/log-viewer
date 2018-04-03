@@ -27,7 +27,6 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.KeyCode;
@@ -310,6 +309,7 @@ public class MainController implements Initializable
 	});
   }
 
+
   private void openFileDialog()
   {
     FileChooser fileChooser = new FileChooser();
@@ -393,33 +393,6 @@ public class MainController implements Initializable
 
   private static ImageView getIcon(LogLevel level)
   {
-
-    String imageName;
-    // TODO load the images static
-    switch (level)
-    {
-      case FATAL:
-    	imageName = "ns_bomb_16.png";
-    	break;
-
-      case ERROR:
-        imageName = "ab_error_16.png";
-        break;
-
-      case WARN:
-        imageName = "ab_warning_16.png";
-        break;
-
-      case INFO:
-        imageName = "ab_information_16.png";
-        break;
-
-      default:
-        imageName = "op_screwdriver_16.png";
-        break;
-    }
-
-    Image image = new Image("/images/" + imageName);
-    return new ImageView(image);
+    return IconUtil.getIcon(level);
   }
 }
