@@ -86,61 +86,26 @@ public class MainController implements Initializable
   @Override
   public void initialize(URL arg0, ResourceBundle arg1)
   {
-	treeAnchorPane.setOnDragOver(event -> {
-            Dragboard dragboard = event.getDragboard();
-            if (dragboard.hasFiles()) {
-                event.acceptTransferModes(TransferMode.COPY);
-            } else {
-                event.consume();
-            }
-    });
+    buildMenu();
+    configureDragAndDrop();
+    configureMinLogLevelSelection();
+    configureSearch();   
+    configureSelectionMode();   
+	addCtrlCSupport();
+  }
 
-	treeAnchorPane.setOnDragDropped(event -> {
-            Dragboard dragboard = event.getDragboard();
-            boolean success = false;
-            if (dragboard.hasFiles()) {
-                success = true;
-                openFile(dragboard.getFiles().get(0));
-            }
-            event.setDropCompleted(success);
-            event.consume();
-    });
 
-    menuPointOpen.setOnAction(event -> {
-      openFileDialog();
-    });
-    
-    menuPointCopy.setOnAction(event -> {
-      copySelectionToClipboard();
-    });
+private void addCtrlCSupport() {
+	treeAnchorPane.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
+		if (ctrlC.match(event)) {
+			copySelectionToClipboard();
+		}
+	});
+}
 
-    menuPointQuit.setOnAction(event -> {
-      System.exit(0);
-    });
 
-    menuPointAbout.setOnAction(event -> {
-      AboutDialog.showAbout();
-    });
-
-    minimalLevel.getItems().addAll(FXCollections.observableArrayList(LogLevel.values()));
-
-    minimalLevel.setOnAction(event -> {
-      selectedLogLevel = minimalLevel.getValue();
-      textToSearch = "";
-      searchField.setText(textToSearch);
-      displayLogEntries();
-    });
-
-    minimalLevel.setValue(selectedLogLevel);
-
-    searchButton.setOnAction(event -> {
-      textToSearch = searchField.getText();
-      displayLogEntries();
-    });
-
-    logTreeView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-    
-    MultipleSelectionModel<TreeItem<String>> defaultSelectionModel = logTreeView.getSelectionModel() ;
+private void configureSelectionMode() {
+	MultipleSelectionModel<TreeItem<String>> defaultSelectionModel = logTreeView.getSelectionModel() ;
     defaultSelectionModel.setSelectionMode(SelectionMode.MULTIPLE);
 
     logTreeView.setSelectionModel(new MultipleSelectionModel<TreeItem<String>>() {
@@ -296,13 +261,76 @@ public class MainController implements Initializable
 			return nodes;
         }
     });
+}
+
+
+private void configureSearch() {
+	searchButton.setOnAction(event -> {
+      textToSearch = searchField.getText();
+      displayLogEntries();
+    });
+}
+
+
+private void configureMinLogLevelSelection() {
+	minimalLevel.getItems().addAll(FXCollections.observableArrayList(LogLevel.values()));
+
+    minimalLevel.setOnAction(event -> {
+      selectedLogLevel = minimalLevel.getValue();
+      clearSearch();
+      displayLogEntries();
+    });
+
+    minimalLevel.setValue(selectedLogLevel);
+}
+
+
+private void clearSearch() {
+	textToSearch = "";
+      searchField.setText(textToSearch);
+}
+
+
+private void buildMenu() {
+	menuPointOpen.setOnAction(event -> {
+      openFileDialog();
+    });
     
-	treeAnchorPane.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
-		if (ctrlC.match(event)) {
-			copySelectionToClipboard();
-		}
-	});
-  }
+    menuPointCopy.setOnAction(event -> {
+      copySelectionToClipboard();
+    });
+
+    menuPointQuit.setOnAction(event -> {
+      System.exit(0);
+    });
+
+    menuPointAbout.setOnAction(event -> {
+      AboutDialog.showAbout();
+    });
+}
+
+
+private void configureDragAndDrop() {
+	treeAnchorPane.setOnDragOver(event -> {
+            Dragboard dragboard = event.getDragboard();
+            if (dragboard.hasFiles()) {
+                event.acceptTransferModes(TransferMode.COPY);
+            } else {
+                event.consume();
+            }
+    });
+
+	treeAnchorPane.setOnDragDropped(event -> {
+            Dragboard dragboard = event.getDragboard();
+            boolean success = false;
+            if (dragboard.hasFiles()) {
+                success = true;
+                openFile(dragboard.getFiles().get(0));
+            }
+            event.setDropCompleted(success);
+            event.consume();
+    });
+}
 
 
   private void openFileDialog()
