@@ -62,9 +62,9 @@ public class MainController implements Initializable
   private AnchorPane treeAnchorPane;
 
   @FXML
-  private ComboBox<String> minimalLevel;
+  private ComboBox<LogLevel> minimalLevel;
 
-  private String selectedLogLevel = "ERROR";
+  private LogLevel selectedLogLevel = LogLevel.ERROR;
 
   private List<LogEntry> logEntries;
 
@@ -122,12 +122,7 @@ public class MainController implements Initializable
       AboutDialog.showAbout();
     });
 
-    minimalLevel.getItems().addAll(FXCollections.observableArrayList(
-            LogLevel.FATAL.name(),
-            LogLevel.ERROR.name(),
-            LogLevel.WARN.name(),
-            LogLevel.INFO.name(),
-            LogLevel.DEBUG.name()));
+    minimalLevel.getItems().addAll(FXCollections.observableArrayList(LogLevel.values()));
 
     minimalLevel.setOnAction(event -> {
       selectedLogLevel = minimalLevel.getValue();
@@ -357,7 +352,7 @@ public class MainController implements Initializable
 
     for (LogEntry entry : logEntries)
     {
-      LogLevel logLevel = LogLevel.fromValue(selectedLogLevel);
+      LogLevel logLevel = selectedLogLevel;
       if (entry.getSeverity().ordinal() < logLevel.ordinal())
       {
         continue;

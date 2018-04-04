@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class IconUtil {
-	
+	  private static Image TRACE_IMAGE = new Image("/images/" + "op_screwdriver_16.png");
 	  private static Image DEBUG_IMAGE = new Image("/images/" + "op_screwdriver_16.png");
 	  private static Image INFO_IMAGE = new Image("/images/" + "ab_information_16.png");
 	  private static Image WARN_IMAGE = new Image("/images/" + "ab_warning_16.png");
@@ -35,6 +35,10 @@ public class IconUtil {
 	      case INFO:
 	        icon = INFO_IMAGE;
 	        break;
+	      
+	      case TRACE:
+	    	icon = TRACE_IMAGE;
+	    	break;
 
 	      default:
 	        icon = DEBUG_IMAGE;

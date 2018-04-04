@@ -3,6 +3,7 @@ package com.axonivy.ivy.supplements.logviewer.parser;
 public enum LogLevel
 {
   // The order of the Enum entries is of importance
+  TRACE("TRACE"),
   DEBUG("DEBUG"),
   INFO("INFO"),
   WARN("WARN"),
