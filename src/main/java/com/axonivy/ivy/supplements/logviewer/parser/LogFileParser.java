@@ -10,13 +10,13 @@ import java.util.stream.Stream;
 
 public class LogFileParser {
 	private File file;
-	private List<LogEntry> logEntries = new ArrayList<>();
+	private List<MainLogEntry> logEntries = new ArrayList<>();
 
 	public LogFileParser(File file) {
 		this.file = file;
 	}
 
-	public List<LogEntry> parse() throws IOException {
+	public List<MainLogEntry> parse() throws IOException {
 		// TODO check if parsing like that is performant enough, else only read headers
 		// TODO also support other encodings
 		try (Stream<String> lines = Files.lines(file.toPath(), StandardCharsets.ISO_8859_1)) {
@@ -38,13 +38,12 @@ public class LogFileParser {
 	private void createNewEntry(String line) {
 		String[] parts = line.split(" ", 3);
 
-		// We rearrange the priority of the title line
-		LogEntry entry = null;
+		MainLogEntry entry = null;
 		if (parts.length >= 2) {
-			entry = new LogEntry(line, parts[0], LogLevel.fromValue(parts[1]));
+			entry = new MainLogEntry(line, parts[0], LogLevel.fromValue(parts[1]));
 		} else {
 			if (!line.trim().equals("") || !parts[0].trim().equals("")) {
-				entry = new LogEntry(line, parts[0], LogLevel.DEBUG /* we set unparsable entries to DEBUG */);
+				entry = new MainLogEntry(line, parts[0], LogLevel.DEBUG /* we set unparsable entries to DEBUG */);
 			}
 		}
 		if (entry != null) {
@@ -53,11 +52,11 @@ public class LogFileParser {
 	}
 
 	private void appendToLastEntry(String line) {
-		LogEntry entry = logEntries.get(logEntries.size() - 1);
+		MainLogEntry entry = logEntries.get(logEntries.size() - 1);
 		if (entry == null) {
-			entry = new LogEntry("Parse ERROR", "Parse Error", LogLevel.DEBUG);
+			entry = new MainLogEntry("Parse ERROR", "Parse Error", LogLevel.DEBUG);
 		}
 
-		entry.addDetailLine(line);
+		entry.addDetailLogEntry(line);
 	}
 }

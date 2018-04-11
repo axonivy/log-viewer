@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import com.axonivy.ivy.supplements.logviewer.parser.LogEntry;
 import com.axonivy.ivy.supplements.logviewer.parser.LogFileParser;
 import com.axonivy.ivy.supplements.logviewer.parser.LogLevel;
+import com.axonivy.ivy.supplements.logviewer.parser.MainLogEntry;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -55,7 +55,7 @@ public class MainController implements Initializable {
 	private MenuItem menuPointAbout;
 
 	@FXML
-	private TreeView<String> logTreeView;
+	private TreeView<Object> logTreeView;
 
 	@FXML
 	private AnchorPane treeAnchorPane;
@@ -65,7 +65,7 @@ public class MainController implements Initializable {
 
 	private LogLevel selectedLogLevel = LogLevel.ERROR;
 
-	private List<LogEntry> logEntries;
+	private List<MainLogEntry> logEntries;
 
 	private File currentFile;
 
@@ -101,10 +101,10 @@ public class MainController implements Initializable {
 	}
 
 	private void configureSelectionMode() {
-		MultipleSelectionModel<TreeItem<String>> defaultSelectionModel = logTreeView.getSelectionModel();
+		MultipleSelectionModel<TreeItem<Object>> defaultSelectionModel = logTreeView.getSelectionModel();
 		defaultSelectionModel.setSelectionMode(SelectionMode.MULTIPLE);
 
-		logTreeView.setSelectionModel(new MultipleSelectionModel<TreeItem<String>>() {
+		logTreeView.setSelectionModel(new MultipleSelectionModel<TreeItem<Object>>() {
 
 			{
 				setSelectionMode(SelectionMode.MULTIPLE);
@@ -116,13 +116,13 @@ public class MainController implements Initializable {
 			}
 
 			@Override
-			public ObservableList<TreeItem<String>> getSelectedItems() {
+			public ObservableList<TreeItem<Object>> getSelectedItems() {
 				return defaultSelectionModel.getSelectedItems();
 			}
 
 			@Override
 			public void selectRange(int start, int end) {
-				List<TreeItem<String>> items = new ArrayList<>();
+				List<TreeItem<Object>> items = new ArrayList<>();
 				for (int i = start; i < end; i++) {
 					items.add(logTreeView.getTreeItem(i));
 				}
@@ -134,44 +134,30 @@ public class MainController implements Initializable {
 
 			@Override
 			public void selectIndices(int index, int... indices) {
-				TreeItem<String> item = logTreeView.getTreeItem(index);
-				if (item.isLeaf()) {
-					defaultSelectionModel.select(item);
-					;
-				} else {
-					List<TreeItem<String>> leaves = new ArrayList<>();
-					findLeavesAndExpand(item, leaves);
-					for (TreeItem<String> leaf : leaves) {
-						defaultSelectionModel.select(leaf);
-					}
+				TreeItem<Object> item = logTreeView.getTreeItem(index);
+				List<TreeItem<Object>> leaves = new ArrayList<>();
+				findEntries(item, leaves);
+				for (TreeItem<Object> leaf : leaves) {
+					defaultSelectionModel.select(leaf);
 				}
 				for (int i : indices) {
 					item = logTreeView.getTreeItem(i);
-					if (item.isLeaf()) {
-						defaultSelectionModel.select(item);
-						;
-					} else {
-						List<TreeItem<String>> leaves = new ArrayList<>();
-						findLeavesAndExpand(item, leaves);
-						for (TreeItem<String> leaf : leaves) {
-							defaultSelectionModel.select(leaf);
-						}
+					leaves = new ArrayList<>();
+					findEntries(item, leaves);
+					for (TreeItem<Object> leaf : leaves) {
+						defaultSelectionModel.select(leaf);
 					}
 				}
 			}
 
 			@Override
 			public void selectAll() {
-				List<TreeItem<String>> leaves = new ArrayList<>();
-				findLeavesAndExpand(logTreeView.getRoot(), leaves);
-				for (TreeItem<String> leaf : leaves) {
-					defaultSelectionModel.select(leaf);
-				}
+				defaultSelectionModel.selectAll();
 			}
 
 			@Override
 			public void selectFirst() {
-				TreeItem<String> firstLeaf;
+				TreeItem<Object> firstLeaf;
 				for (firstLeaf = logTreeView.getRoot(); !firstLeaf.isLeaf(); firstLeaf = firstLeaf.getChildren().get(0))
 					;
 				defaultSelectionModel.select(firstLeaf);
@@ -179,7 +165,7 @@ public class MainController implements Initializable {
 
 			@Override
 			public void selectLast() {
-				TreeItem<String> lastLeaf;
+				TreeItem<Object> lastLeaf;
 				for (lastLeaf = logTreeView.getRoot(); !lastLeaf.isLeaf(); lastLeaf = lastLeaf.getChildren()
 						.get(lastLeaf.getChildren().size() - 1))
 					;
@@ -188,16 +174,12 @@ public class MainController implements Initializable {
 
 			@Override
 			public void clearAndSelect(int index) {
-				TreeItem<String> item = logTreeView.getTreeItem(index);
+				TreeItem<Object> item = logTreeView.getTreeItem(index);
 				defaultSelectionModel.clearSelection();
-				if (item.isLeaf()) {
-					defaultSelectionModel.select(item);
-				} else {
-					List<TreeItem<String>> leaves = new ArrayList<>();
-					findLeavesAndExpand(item, leaves);
-					for (TreeItem<String> leaf : leaves) {
-						defaultSelectionModel.select(leaf);
-					}
+				List<TreeItem<Object>> leaves = new ArrayList<>();
+				findEntries(item, leaves);
+				for (TreeItem<Object> leaf : leaves) {
+					defaultSelectionModel.select(leaf);
 				}
 			}
 
@@ -207,10 +189,10 @@ public class MainController implements Initializable {
 			}
 
 			@Override
-			public void select(TreeItem<String> item) {
-				List<TreeItem<String>> leaves = new ArrayList<>();
-				leaves = findLeavesAndExpand(item, leaves);
-				for (TreeItem<String> leaf : leaves) {
+			public void select(TreeItem<Object> item) {
+				List<TreeItem<Object>> children = new ArrayList<>();
+				children = findEntries(item, children);
+				for (TreeItem<Object> leaf : children) {
 					defaultSelectionModel.select(leaf);
 				}
 			}
@@ -245,15 +227,15 @@ public class MainController implements Initializable {
 				defaultSelectionModel.selectNext();
 			}
 
-			private List<TreeItem<String>> findLeavesAndExpand(TreeItem<String> node, List<TreeItem<String>> nodes) {
-				if (!node.isLeaf()) {
+			private List<TreeItem<Object>> findEntries(TreeItem<Object> node, List<TreeItem<Object>> nodes) {
+				if (node.getValue() instanceof MainLogEntry) {
 					nodes.add(node);
 					node.setExpanded(true);
-					for (TreeItem<String> child : node.getChildren()) {
+					for (TreeItem<Object> child : node.getChildren()) {
 						nodes.add(child);
 					}
 				} else {
-					findLeavesAndExpand(node.getParent(), nodes);
+					findEntries(node.getParent(), nodes);
 				}
 				return nodes;
 			}
@@ -351,7 +333,7 @@ public class MainController implements Initializable {
 	}
 
 	private void displayLogEntries() {
-		TreeItem<String> rootItem = new TreeItem<String>("All");
+		TreeItem<Object> rootItem = new TreeItem<Object>(new MainLogEntry("All", "All", LogLevel.DEBUG));
 		logTreeView.setRoot(rootItem);
 		logTreeView.setShowRoot(false);
 		rootItem.setExpanded(true);
@@ -360,7 +342,7 @@ public class MainController implements Initializable {
 			return;
 		}
 
-		for (LogEntry entry : logEntries) {
+		for (MainLogEntry entry : logEntries) {
 			LogLevel logLevel = selectedLogLevel;
 			if (entry.getSeverity().ordinal() < logLevel.ordinal()) {
 				continue;
@@ -372,16 +354,19 @@ public class MainController implements Initializable {
 				}
 			}
 
-			TreeItem<String> item = new TreeItem<String>(entry.getTitleLine(), getIcon(entry.getSeverity()));
-			TreeItem<String> detailItem = new TreeItem<String>(entry.getDetails());
-			item.getChildren().add(detailItem);
+			TreeItem<Object> item = new TreeItem<Object>(entry, getIcon(entry.getSeverity()));
+
+			if (entry.getDetailLogEntry() != null) {
+				TreeItem<Object> detailItem = new TreeItem<Object>(entry.getDetailLogEntry());
+				item.getChildren().add(detailItem);
+			}
 			rootItem.getChildren().add(item);
 		}
 	}
 
 	private void copySelectionToClipboard() {
 		String selectedEntries = new String();
-		for (TreeItem<String> selectedEntry : logTreeView.getSelectionModel().getSelectedItems()) {
+		for (TreeItem<Object> selectedEntry : logTreeView.getSelectionModel().getSelectedItems()) {
 			selectedEntries = selectedEntries.concat(selectedEntry.getValue() + "\n");
 		}
 
