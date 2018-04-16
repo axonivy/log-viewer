@@ -6,6 +6,7 @@ import java.awt.datatransfer.StringSelection;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -52,6 +53,9 @@ public class MainController implements Initializable {
 	private MenuItem menuPointQuit;
 
 	@FXML
+	private MenuItem menuPointCollapse;
+
+	@FXML
 	private MenuItem menuPointAbout;
 
 	@FXML
@@ -93,7 +97,7 @@ public class MainController implements Initializable {
 	}
 
 	private void addCtrlCSupport() {
-		treeAnchorPane.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
+		treeAnchorPane.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
 			if (ctrlC.match(event)) {
 				copySelectionToClipboard();
 			}
@@ -275,6 +279,10 @@ public class MainController implements Initializable {
 			copySelectionToClipboard();
 		});
 
+		menuPointCollapse.setOnAction(event -> {
+			collapseTreeView(logTreeView.getRoot());
+		});
+
 		menuPointQuit.setOnAction(event -> {
 			System.exit(0);
 		});
@@ -282,6 +290,17 @@ public class MainController implements Initializable {
 		menuPointAbout.setOnAction(event -> {
 			AboutDialog.showAbout();
 		});
+	}
+
+	private void collapseTreeView(TreeItem<Object> item) {
+		for (TreeItem<Object> child : item.getChildren()) {
+			if (child != null) {
+				child.setExpanded(false);
+				if (!child.isLeaf()) {
+					collapseTreeView(child);
+				}
+			}
+		}
 	}
 
 	private void configureDragAndDrop() {

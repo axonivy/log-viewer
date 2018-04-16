@@ -21,6 +21,8 @@
             <MenuItem fx:id="menuPointOpen" mnemonicParsing="false" text="Open…" />
             <MenuItem fx:id="menuPointCopy" mnemonicParsing="false" text="Copy" />
             <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="menuPointCollapse" mnemonicParsing="false" text="Collapse All" />
+            <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem fx:id="menuPointQuit" mnemonicParsing="false" text="Quit" />
           </items>
         </Menu>
