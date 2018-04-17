@@ -49,4 +49,22 @@ public class TestLogFileParser {
 				.collect(Collectors.toList());
 		assertThat(debugs).hasSize(1);
 	}
+	
+	
+	@Test
+	public void testDetailLogEntry() throws IOException {
+		File testLogFile = new File("src/test/resources/testlog-rc.log");
+
+		LogFileParser logFileParser = new LogFileParser(testLogFile);
+		List<MainLogEntry> logList = logFileParser.parse();
+		
+		List<MainLogEntry> warnings = logList.stream().filter(e -> e.getSeverity().equals(LogLevel.WARN))
+				.collect(Collectors.toList());
+		assertThat(warnings).hasSize(4);
+		
+		MainLogEntry mainEntry = warnings.get(0);
+		assertThat(mainEntry.getDetailLogEntry().get(0).getDetailText()).isEqualTo("  Problem while processing request 'http://localhost:8080/ivy/pro/TestAPP/AngularWfDemo$1/1614CC1E96512AEA/createTestTask.ivp'");
+		assertThat(mainEntry.getDetailLogEntry().get(1).getDetailText()).isEqualTo("    [errorId=161519F22B42A867, requestId=297, executionContext=SYSTEM, client=127.0.0.1]");
+		assertThat(mainEntry.getDetailLogEntry()).hasSize(70);
+	}
 }

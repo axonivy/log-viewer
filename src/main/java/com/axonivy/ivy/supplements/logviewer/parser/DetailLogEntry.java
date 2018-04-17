@@ -20,6 +20,6 @@ public class DetailLogEntry {
 	
 	@Override
 	public String toString() {
-		return parentEntry.getOriginalTitleLine().concat("\n").concat(getDetailText());
+		return getDetailText();
 	}
 }
