@@ -23,7 +23,7 @@ public class MainLogEntry {
 		this.severity = severity;
 	}
 
-	public List<DetailLogEntry> getDetailLogEntry() {
+	public List<DetailLogEntry> getDetailLogEntries() {
 		return detailLogEntries;
 	}
 	
@@ -48,10 +48,7 @@ public class MainLogEntry {
 	}
 
 	public String getDetails() {
-		String details = originalTitleLine;
-		for(DetailLogEntry detailLogEntry : detailLogEntries) {
-			details.concat("\n").concat(detailLogEntry.getDetailText());
-		}
+		String details = originalTitleLine + "\n" + LogUtil.concatDetailEntries(getDetailLogEntries());
 		return details;
 	}
 

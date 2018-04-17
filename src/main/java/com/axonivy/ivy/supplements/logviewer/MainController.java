@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import com.axonivy.ivy.supplements.logviewer.parser.DetailLogEntry;
 import com.axonivy.ivy.supplements.logviewer.parser.LogFileParser;
 import com.axonivy.ivy.supplements.logviewer.parser.LogLevel;
+import com.axonivy.ivy.supplements.logviewer.parser.LogUtil;
 import com.axonivy.ivy.supplements.logviewer.parser.MainLogEntry;
 
 import javafx.collections.FXCollections;
@@ -375,21 +375,12 @@ public class MainController implements Initializable {
 
 			TreeItem<Object> item = new TreeItem<Object>(entry, getIcon(entry.getSeverity()));
 
-			if (entry.getDetailLogEntry() != null) {
-				TreeItem<Object> detailItem = new TreeItem<Object>(concatDetailEntries(entry.getDetailLogEntry()));
+			if (entry.getDetailLogEntries() != null) {
+				TreeItem<Object> detailItem = new TreeItem<Object>(LogUtil.concatDetailEntries(entry.getDetailLogEntries()));
 				item.getChildren().add(detailItem);
 			}
 			rootItem.getChildren().add(item);
 		}
-	}
-	
-	private static String concatDetailEntries(List<DetailLogEntry> detailEntries) {
-		StringBuilder sb = new StringBuilder();
-		for (DetailLogEntry detailLogEntry : detailEntries) {
-			sb.append(detailLogEntry.getDetailText());
-			sb.append("\n");
-		}
-		return sb.toString();
 	}
 
 	private void copySelectionToClipboard() {
