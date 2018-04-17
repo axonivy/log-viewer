@@ -1,5 +1,9 @@
 package com.axonivy.ivy.supplements.logviewer.parser;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public enum LogLevel {
 	// The order of the Enum entries is of importance
 	TRACE("TRACE"), DEBUG("DEBUG"), INFO("INFO"), WARN("WARN"), ERROR("ERROR"), FATAL("FATAL");
@@ -34,5 +38,11 @@ public enum LogLevel {
 		}
 
 		return DEBUG;
+	}
+	
+	public static LogLevel[] valuesDesc() {
+		List<LogLevel> logLevels = Arrays.asList(LogLevel.values());
+		Collections.reverse(logLevels);
+		return logLevels.toArray(LogLevel.values());
 	}
 }

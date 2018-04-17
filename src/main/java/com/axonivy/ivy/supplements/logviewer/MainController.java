@@ -6,7 +6,6 @@ import java.awt.datatransfer.StringSelection;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -255,7 +254,7 @@ public class MainController implements Initializable {
 	}
 
 	private void configureMinLogLevelSelection() {
-		minimalLevel.getItems().addAll(FXCollections.observableArrayList(LogLevel.values()));
+		minimalLevel.getItems().addAll(FXCollections.observableArrayList(LogLevel.valuesDesc()));
 
 		minimalLevel.setOnAction(event -> {
 			selectedLogLevel = minimalLevel.getValue();
