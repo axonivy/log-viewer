@@ -11,7 +11,6 @@ import java.util.ResourceBundle;
 
 import com.axonivy.ivy.supplements.logviewer.parser.LogFileParser;
 import com.axonivy.ivy.supplements.logviewer.parser.LogLevel;
-import com.axonivy.ivy.supplements.logviewer.parser.LogUtil;
 import com.axonivy.ivy.supplements.logviewer.parser.MainLogEntry;
 
 import javafx.collections.FXCollections;
@@ -376,7 +375,7 @@ public class MainController implements Initializable {
 			TreeItem<Object> item = new TreeItem<Object>(entry, getIcon(entry.getSeverity()));
 
 			if (entry.getDetailLogEntry() != null) {
-				TreeItem<Object> detailItem = new TreeItem<Object>(LogUtil.concatDetailEntries(entry.getDetailLogEntry()));
+				TreeItem<Object> detailItem = new TreeItem<Object>(entry.getDetails());
 				item.getChildren().add(detailItem);
 			}
 			rootItem.getChildren().add(item);
@@ -386,7 +385,9 @@ public class MainController implements Initializable {
 	private void copySelectionToClipboard() {
 		String selectedEntries = new String();
 		for (TreeItem<Object> selectedEntry : logTreeView.getSelectionModel().getSelectedItems()) {
-			selectedEntries = selectedEntries.concat(selectedEntry.getValue() + "\n");
+			if (!(selectedEntry.getValue() instanceof MainLogEntry)) {
+				selectedEntries = selectedEntries.concat(selectedEntry.getValue() + "\n");
+			}
 		}
 
 		StringSelection selection = new StringSelection(selectedEntries);

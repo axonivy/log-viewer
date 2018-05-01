@@ -47,7 +47,7 @@ public class MainLogEntry {
 	}
 
 	public String getDetails() {
-		String details = originalTitleLine + "\n" + LogUtil.concatDetailEntries(getDetailLogEntry());
+		String details = originalTitleLine + "\n" + getDetailLogEntry();
 		return details;
 	}
 

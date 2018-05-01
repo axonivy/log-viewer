@@ -19,7 +19,7 @@ public class DetailLogEntry {
 	}
 	
 	public String getDetailText() {
-		return detailText;
+		return detailText + "\n";
 	}
 	
 	@Override
