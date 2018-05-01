@@ -5,7 +5,7 @@ Started as a simple JavaFX test project, but is actually useful as a small and s
 ![screenshot](ivy-log-viewer-screenshot.png)
 
 ## Requirements
-* Java 8 with JavaFX.
+* Java 8 with JavaFX (on Linux you need to install `openjfx` in addition to the JDK).
 * Maven 3 and later for building.
 
 ## Installation
