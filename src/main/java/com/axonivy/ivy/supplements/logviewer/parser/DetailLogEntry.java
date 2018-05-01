@@ -14,6 +14,10 @@ public class DetailLogEntry {
 		return parentEntry;
 	}
 
+	public void addDetailLine(String detailLine) {
+		detailText += "\n" + detailLine;
+	}
+	
 	public String getDetailText() {
 		return detailText;
 	}

@@ -2067,4 +2067,5 @@
   Axon.ivy Engine is stopped.
 14:52:59.534 DEBUG [ch.ivyteam.server] [main] [] 
   Test Debug Entry
-  
+14:52:59.534 TRACE [ch.ivyteam.server] [main] [] 
+  Test Trace Entry  

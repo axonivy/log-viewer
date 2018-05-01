@@ -1,20 +1,19 @@
 package com.axonivy.ivy.supplements.logviewer.parser;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainLogEntry {
 	private String originalTitleLine;
 	private String time;
 	private LogLevel severity;
-	private List<DetailLogEntry> detailLogEntries;
+	private DetailLogEntry detailLogEntry;
 	
 
-	public void addDetailLogEntry(String detailLogEntry) {
-		if(detailLogEntries == null) {
-			detailLogEntries = new ArrayList<DetailLogEntry>();
+	public void addDetailLogEntry(String detailLine) {
+		if(detailLogEntry == null) {
+			detailLogEntry = new DetailLogEntry(this, detailLine);
 		}
-		detailLogEntries.add(new DetailLogEntry(this, detailLogEntry));
+		else {
+			detailLogEntry.addDetailLine(detailLine);
+		}
 	}
 
 	public MainLogEntry(String originalTitleLine, String time, LogLevel severity) {
@@ -23,8 +22,8 @@ public class MainLogEntry {
 		this.severity = severity;
 	}
 
-	public List<DetailLogEntry> getDetailLogEntries() {
-		return detailLogEntries;
+	public DetailLogEntry getDetailLogEntry() {
+		return detailLogEntry;
 	}
 	
 	public String getOriginalTitleLine() {
@@ -33,8 +32,8 @@ public class MainLogEntry {
 
 	public String getTitleLine() {
 		String detailTitle = "";
-		if (detailLogEntries != null) {
-			detailTitle = detailLogEntries.get(0).getDetailText().split("[\\r\\n]+")[0];
+		if (detailLogEntry != null) {
+			detailTitle = detailLogEntry.getDetailText().split("[\\r\\n]+")[0];
 		}
 		return time + " " + severity + ": " + detailTitle.trim();
 	}
@@ -48,7 +47,7 @@ public class MainLogEntry {
 	}
 
 	public String getDetails() {
-		String details = originalTitleLine + "\n" + LogUtil.concatDetailEntries(getDetailLogEntries());
+		String details = originalTitleLine + "\n" + LogUtil.concatDetailEntries(getDetailLogEntry());
 		return details;
 	}
 

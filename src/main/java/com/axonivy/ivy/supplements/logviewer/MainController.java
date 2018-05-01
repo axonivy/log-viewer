@@ -375,8 +375,8 @@ public class MainController implements Initializable {
 
 			TreeItem<Object> item = new TreeItem<Object>(entry, getIcon(entry.getSeverity()));
 
-			if (entry.getDetailLogEntries() != null) {
-				TreeItem<Object> detailItem = new TreeItem<Object>(LogUtil.concatDetailEntries(entry.getDetailLogEntries()));
+			if (entry.getDetailLogEntry() != null) {
+				TreeItem<Object> detailItem = new TreeItem<Object>(LogUtil.concatDetailEntries(entry.getDetailLogEntry()));
 				item.getChildren().add(detailItem);
 			}
 			rootItem.getChildren().add(item);
