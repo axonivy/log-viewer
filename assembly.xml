@@ -2,7 +2,7 @@
     <formats>
         <format>zip</format>
     </formats>
-    
+
     <includeBaseDirectory>false</includeBaseDirectory>
 
     <fileSets>
@@ -18,8 +18,15 @@
             <directory>start-scripts</directory>
             <includes>
                 <include>*.bat</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+        	<outputDirectory />
+            <directory>start-scripts</directory>
+            <includes>
                 <include>*.sh</include>
             </includes>
+            <fileMode>0755</fileMode>
         </fileSet>
     </fileSets>
 </assembly>
