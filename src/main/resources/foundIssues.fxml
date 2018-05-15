@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" stylesheets="@foundIssues.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.axonivy.ivy.supplements.logviewer.knownissues.KnownIssuesController">
+	<children>
+      <MenuBar fx:id="menuBar">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem fx:id="menuPointClose" mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+		<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="445.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+			<children>
+				<ListView fx:id="knownIssuesList" editable="true" prefHeight="372.0" prefWidth="640.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Label fx:id="foundIssuesLabel" layoutX="14.0" layoutY="87.0" prefHeight="17.0" prefWidth="640.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+			</children>
+		</AnchorPane>
+	</children>
+</VBox>

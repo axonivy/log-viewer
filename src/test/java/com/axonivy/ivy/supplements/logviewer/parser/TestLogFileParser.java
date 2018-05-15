@@ -7,19 +7,25 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestLogFileParser {
+	private List<MainLogEntry> logList;
+
 	/*
 	 * This test tests the current state of parsing, which is not perfect yet.
 	 */
-	@Test
-	public void parseLogFile() throws IOException {
+	@Before
+	public void setUp() throws IOException {
 		File testLogFile = new File("src/test/resources/testlog-rc.log");
 
 		LogFileParser logFileParser = new LogFileParser(testLogFile);
-		List<MainLogEntry> logList = logFileParser.parse();
+		logList = logFileParser.parse();
+	}
 
+	@Test
+	public void parseLogFile() throws IOException {
 		assertThat(logList).hasSize(892);
 
 		List<MainLogEntry> fatals = logList.stream().filter(e -> e.getSeverity().equals(LogLevel.FATAL))
@@ -48,25 +54,21 @@ public class TestLogFileParser {
 		List<MainLogEntry> debugs = logList.stream().filter(e -> e.getSeverity().equals(LogLevel.DEBUG))
 				.collect(Collectors.toList());
 		assertThat(debugs).hasSize(1);
-		
+
 		List<MainLogEntry> traces = logList.stream().filter(e -> e.getSeverity().equals(LogLevel.TRACE))
 				.collect(Collectors.toList());
 		assertThat(traces).hasSize(1);
 	}
-	
-	
+
 	@Test
 	public void testDetailLogEntry() throws IOException {
-		File testLogFile = new File("src/test/resources/testlog-rc.log");
-
-		LogFileParser logFileParser = new LogFileParser(testLogFile);
-		List<MainLogEntry> logList = logFileParser.parse();
-		
 		List<MainLogEntry> warnings = logList.stream().filter(e -> e.getSeverity().equals(LogLevel.WARN))
 				.collect(Collectors.toList());
 		assertThat(warnings).hasSize(4);
-		
+
 		MainLogEntry mainEntry = warnings.get(0);
-		assertThat(mainEntry.getDetailLogEntry().getDetailText()).startsWith("  Problem while processing request 'http://localhost:8080/ivy/pro/TestAPP/AngularWfDemo$1/1614CC1E96512AEA/createTestTask.ivp'");
+		assertThat(mainEntry.getDetailLogEntry().getDetailText()).startsWith(
+				"  Problem while processing request 'http://localhost:8080/ivy/pro/TestAPP/AngularWfDemo$1/1614CC1E96512AEA/createTestTask.ivp'");
 	}
+
 }

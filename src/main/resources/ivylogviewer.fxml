@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -12,7 +15,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" stylesheets="@ivylogviewer.css" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.axonivy.ivy.supplements.logviewer.MainController">
+<VBox prefHeight="400.0" prefWidth="640.0" stylesheets="@ivylogviewer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.axonivy.ivy.supplements.logviewer.MainController">
   <children>
     <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
       <menus>
@@ -26,6 +29,11 @@
             <MenuItem fx:id="menuPointQuit" mnemonicParsing="false" text="Quit" />
           </items>
         </Menu>
+            <Menu mnemonicParsing="false" text="Experimental">
+              <items>
+                <MenuItem fx:id="menuPointCheckKnownIssues" mnemonicParsing="false" text="Check known issues" />
+              </items>
+            </Menu>
         <Menu mnemonicParsing="false" text="Help">
           <items>
             <MenuItem fx:id="menuPointAbout" mnemonicParsing="false" text="About IvyLogViewer" />

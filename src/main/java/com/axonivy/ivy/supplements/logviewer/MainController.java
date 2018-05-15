@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import com.axonivy.ivy.supplements.logviewer.knownissues.KnownIssues;
 import com.axonivy.ivy.supplements.logviewer.parser.LogFileParser;
 import com.axonivy.ivy.supplements.logviewer.parser.LogLevel;
 import com.axonivy.ivy.supplements.logviewer.parser.MainLogEntry;
@@ -84,6 +85,9 @@ public class MainController implements Initializable {
 	private Label filepathLabel;
 
 	private final KeyCombination ctrlC = new KeyCodeCombination(KeyCode.C, KeyCombination.CONTROL_DOWN);
+
+	@FXML
+	private MenuItem menuPointCheckKnownIssues;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -289,6 +293,13 @@ public class MainController implements Initializable {
 		menuPointAbout.setOnAction(event -> {
 			AboutDialog.showAbout();
 		});
+
+		menuPointCheckKnownIssues.setOnAction(event -> openKnownIssues());
+	}
+
+	private void openKnownIssues() {
+		KnownIssues knownIssues = new KnownIssues(logEntries);
+		knownIssues.open();
 	}
 
 	private void collapseTreeView(TreeItem<Object> item) {
