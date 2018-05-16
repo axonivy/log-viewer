@@ -29,7 +29,7 @@
             <MenuItem fx:id="menuPointQuit" mnemonicParsing="false" text="Quit" />
           </items>
         </Menu>
-            <Menu mnemonicParsing="false" text="Experimental">
+            <Menu mnemonicParsing="false" text="Analyse">
               <items>
                 <MenuItem fx:id="menuPointCheckKnownIssues" mnemonicParsing="false" text="Check known issues" />
               </items>

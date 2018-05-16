@@ -32,8 +32,7 @@ public class KnownIssue {
 		}
 		final KnownIssue toCompare = (KnownIssue) obj;
 
-		return
-				new EqualsBuilder()
+		return new EqualsBuilder()
 				.append(issueID, toCompare.issueID)
 				.append(issueTitle, toCompare.issueTitle)
 				.append(fixedVersions, toCompare.fixedVersions)
@@ -41,7 +40,6 @@ public class KnownIssue {
 				.append(matchExceptionParts, toCompare.matchExceptionParts)
 				.isEquals();
 	}
-
 
 	@Override
 	public int hashCode() {
