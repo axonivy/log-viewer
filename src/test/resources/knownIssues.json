@@ -1,0 +1,14 @@
+﻿{
+  "version" : 1,
+  "knownIssues" :
+  [{
+    "issueID" : "XIVY-2492",
+    "issueTitle" : "Broken pipe when trying to load web assets like fonts or css files",
+    "fixedVersions" : ["7.0.5", "7.2"],
+    "workaround" : "It is possible to disable the logging of those exceptions by adding following to the log4jconfig.xml:\r\n    <!-- Prevent \"ClientAbortException: java.io.IOException: Broken pipe\" from filling the log -->\r\n    <category name=\"org.apache.myfaces.application.ResourceHandlerImpl\" class=\"ch.ivyteam.log.Logger\">\r\n    <priority value=\"FATAL\"\/>\r\n    <\/category>",
+    "matchExceptionParts": [ "org.apache.catalina.connector.ClientAbortException: java.io.IOException: Broken pipe",
+       "at ch.ivyteam.ivy.dialog.execution.jsf.controller.resource.IvyFacesResourceFilter.filter"],
+    "randomKey" : "randomValue"
+    }]
+  }
+  

@@ -3,31 +3,30 @@ package com.axonivy.ivy.supplements.logviewer.knownissues;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.File;
-import java.io.IOException;
+import java.io.FileReader;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import com.axonivy.ivy.supplements.logviewer.knownissues.webservice.KnownIssue;
+import com.axonivy.ivy.supplements.logviewer.knownissues.webservice.KnownIssuesWrapper;
 import com.axonivy.ivy.supplements.logviewer.parser.LogFileParser;
 import com.axonivy.ivy.supplements.logviewer.parser.MainLogEntry;
+import com.google.gson.Gson;
+import com.google.gson.stream.JsonReader;
 
 public class TestIssuesParser {
 
 	private List<MainLogEntry> logList;
 
-	@Before
-	public void setUp() throws IOException {
+	@Test
+	public void testBrokenPipe() throws Exception {
 		File testLogFile = new File("src/test/resources/TestBrokenPipeIssueFinder.log");
 
 		LogFileParser logFileParser = new LogFileParser(testLogFile);
 		logList = logFileParser.parse();
-	}
 
-	@Test
-	public void testBrokenPipe() throws Exception {
 		IssuesParser parser = new IssuesParser();
 		parser.setLogEntries(logList);
 		List<KnownIssue> knownIssues = parser.getKnownIssues();
@@ -44,5 +43,13 @@ public class TestIssuesParser {
 						+ " <priority value=\"FATAL\"/>\r\n    </category>",
 				Arrays.asList("org.apache.catalina.connector.ClientAbortException: java.io.IOException: Broken pipe",
 						"at ch.ivyteam.ivy.dialog.execution.jsf.controller.resource.IvyFacesResourceFilter.filter"));
+	}
+
+	@Test
+	public void testAdditionalJsonField() throws Exception {
+		Gson gson = new Gson();
+		KnownIssuesWrapper jsonObject = gson.fromJson(
+				new JsonReader(new FileReader("src/test/resources/knownIssues.json")), KnownIssuesWrapper.class);
+		assertThat(jsonObject.knownIssues).isNotNull();
 	}
 }
