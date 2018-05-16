@@ -41,39 +41,44 @@
 			<version>3.4.1</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>com.axonivy.ivy.supplements.logviewer.Main</mainClass>
-						</manifest>
-					</archive>
-					<finalName>ivy-log-viewer</finalName>
-				</configuration>
-			</plugin>
-
-			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<finalName>IvyLogViewer-${project.version}</finalName>
-					<descriptors>
-						<descriptor>${basedir}/assembly.xml</descriptor>
-					</descriptors>
-				</configuration>
 				<executions>
 					<execution>
-						<id>make-assembly</id>
+						<id>make-fat-jar</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<finalName>ivy-log-viewer</finalName>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+							<archive>
+								<manifest>
+									<mainClass>com.axonivy.ivy.supplements.logviewer.Main</mainClass>
+								</manifest>
+							</archive>
+							<appendAssemblyId>false</appendAssemblyId>
+						</configuration>
+					</execution>
+					<execution>
+						<id>make-zip</id>
 						<phase>package</phase>
 						<goals>
 							<goal>single</goal>
 						</goals>
+						<configuration>
+							<finalName>ivy-log-viewer-${project.version}</finalName>
+							<descriptors>
+								<descriptor>${basedir}/assembly.xml</descriptor>
+							</descriptors>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
