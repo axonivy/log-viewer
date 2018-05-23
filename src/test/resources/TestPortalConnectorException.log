@@ -309,9 +309,9 @@
     	at ch.ivyteam.ivy.webservice.process.internal.authentication.HttpBasicAuthenticationInterceptor.authenticateUser(HttpBasicAuthenticationInterceptor.java:87)
     	at ch.ivyteam.ivy.webservice.process.internal.authentication.HttpBasicAuthenticationInterceptor.handleMessage(HttpBasicAuthenticationInterceptor.java:70)
     	... 53 more
-07:11:15.196 ERROR [runtimelog.Company.PortalKit.user_code] [ajp-nio-8009-exec-1] [request=HTTP GET call(52111.52610.20.2), session=13 (Plath), task=52610, application=201, requestId=47, executionContext=13 (Plath), pmv=Company$PortalKit$1, hd=ch.ivy.addon.portal.generic.PortalTaskMenu, processElement=14E8BC51CC56193A-f7]
+07:11:15.196 ERROR [runtimelog.Company.PortalKit.user_code] [ajp-nio-8009-exec-1] [request=HTTP GET call(52111.52610.20.2), session=13 (username), task=52610, application=201, requestId=47, executionContext=13 (username), pmv=Company$PortalKit$1, hd=ch.ivy.addon.portal.generic.PortalTaskMenu, processElement=14E8BC51CC56193A-f7]
   Transport error: 403 Error:
-07:11:53.868 ERROR [runtimelog.Company.PortalKit.user_code] [ajp-nio-8009-exec-4] [request=HTTP GET call(52111.52610.22.3), session=13 (Plath), task=52610, application=201, requestId=107, executionContext=13 (Plath), pmv=Company$PortalKit$1, hd=ch.ivy.addon.portal.generic.PortalTaskMenu, processElement=152AA5CA98B525F2-f3]
+07:11:53.868 ERROR [runtimelog.Company.PortalKit.user_code] [ajp-nio-8009-exec-4] [request=HTTP GET call(52111.52610.22.3), session=13 (username), task=52610, application=201, requestId=107, executionContext=13 (username), pmv=Company$PortalKit$1, hd=ch.ivy.addon.portal.generic.PortalTaskMenu, processElement=152AA5CA98B525F2-f3]
   Web service error with:
   - User text: Die Axon.ivy Engine {0} oder deren Portal ist nicht erreichbar.
   - Help text: null
@@ -398,7 +398,7 @@
     	at ch.ivyteam.ivy.webservice.process.internal.authentication.HttpBasicAuthenticationInterceptor.authenticateUser(HttpBasicAuthenticationInterceptor.java:87)
     	at ch.ivyteam.ivy.webservice.process.internal.authentication.HttpBasicAuthenticationInterceptor.handleMessage(HttpBasicAuthenticationInterceptor.java:70)
     	... 53 more
-07:11:54.024 INFO [org.apache.axis2.transport.http.HTTPSender] [ivy background operation pool-thread-1] [request=HTTP GET call(52111.52610.22.0), session=13 (Plath), task=52610, application=201, requestId=107, executionContext=SYSTEM, pmv=Company$PortalKit$1, processElement=14E8BC51CC56193A-f173]
+07:11:54.024 INFO [org.apache.axis2.transport.http.HTTPSender] [ivy background operation pool-thread-1] [request=HTTP GET call(52111.52610.22.0), session=13 (username), task=52610, application=201, requestId=107, executionContext=SYSTEM, pmv=Company$PortalKit$1, processElement=14E8BC51CC56193A-f173]
   Unable to sendViaPost to url[http://localhost:8080/ivy/ws/System/PortalConnector/1380566F9095B9C4]
     org.apache.axis2.AxisFault: Transport error: 403 Error:
     	at org.apache.axis2.transport.http.HTTPSender.handleResponse(HTTPSender.java:298)
@@ -432,7 +432,7 @@
     	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
     	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
     	at java.lang.Thread.run(Thread.java:748)
-07:11:54.024 ERROR [runtimelog.Company.PortalKit.web_service] [ivy background operation pool-thread-1] [request=HTTP GET call(52111.52610.22.0), session=13 (Plath), task=52610, application=201, requestId=107, executionContext=SYSTEM, pmv=Company$PortalKit$1, processElement=14E8BC51CC56193A-f173]
+07:11:54.024 ERROR [runtimelog.Company.PortalKit.web_service] [ivy background operation pool-thread-1] [request=HTTP GET call(52111.52610.22.0), session=13 (username), task=52610, application=201, requestId=107, executionContext=SYSTEM, pmv=Company$PortalKit$1, processElement=14E8BC51CC56193A-f173]
   Web Service Element: Call to http://localhost:8080/ivy/ws/System/PortalConnector/1380566F9095B9C4 (Operation[name=findGroupTaskCategories,port=TaskServicePort,parameters=[TypedMapping /name=arg0.findGroupTaskCategories.apps /type=Array<String> /expression=in.applicationNames, TypedMapping /name=arg0.findGroupTaskCategories.jsonQuery /type=String /expression=in.jsonQuery, TypedMapping /name=arg0.findGroupTaskCategories.language /type=String /expression=in.language, TypedMapping /name=arg0.findGroupTaskCategories.userName /type=String /expression=in.taskCategoryRequester],parameterMappingOptions=RequestParameterMappingOptions[mapNullValues=false,autoInitializeFirstLevelFields=true]]) failed !
   *** PARAMETERS ***
    name : arg0
@@ -440,7 +440,7 @@
      apps : [Ljava.lang.String;@7227d2bb
      jsonQuery :
      language : de-CH
-     userName : Plath
+     userName : username
   *** RESPONSE ***
   Exception's localizedMessage: Transport error: 403 Error: , message: Transport error: 403 Error:
     org.apache.axis2.AxisFault: Transport error: 403 Error:
@@ -475,5 +475,5 @@
     	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
     	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
     	at java.lang.Thread.run(Thread.java:748)
-07:11:54.024 ERROR [runtimelog.Company.PortalKit.user_code] [ajp-nio-8009-exec-4] [request=HTTP GET call(52111.52610.22.2), session=13 (Plath), task=52610, application=201, requestId=107, executionContext=13 (Plath), pmv=Company$PortalKit$1, hd=ch.ivy.addon.portal.generic.PortalTaskMenu, processElement=14E8BC51CC56193A-f7]
+07:11:54.024 ERROR [runtimelog.Company.PortalKit.user_code] [ajp-nio-8009-exec-4] [request=HTTP GET call(52111.52610.22.2), session=13 (username), task=52610, application=201, requestId=107, executionContext=13 (username), pmv=Company$PortalKit$1, hd=ch.ivy.addon.portal.generic.PortalTaskMenu, processElement=14E8BC51CC56193A-f7]
   Transport error: 403 Error:
