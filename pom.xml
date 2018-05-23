@@ -5,7 +5,7 @@
 
 	<groupId>com.axonivy.ivy.supplements</groupId>
 	<artifactId>ivy-log-viewer</artifactId>
-	<version>0.7.2-KNOWNISSUES-SNAPSHOT</version>
+	<version>0.8.0</version>
 	<packaging>jar</packaging>
 
 	<name>ivy-log-viewer</name>
