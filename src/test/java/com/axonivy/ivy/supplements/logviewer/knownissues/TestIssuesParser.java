@@ -73,6 +73,23 @@ public class TestIssuesParser {
 		assertThat(knownIssues).contains(brokenPipeIssue, emptyStackIssue);
 	}
 
+	@Test
+	public void testPortalConnectorException() throws Exception {
+		List<MainLogEntry> logEntries = getLogList("src/test/resources/TestPortalConnectorException.log");
+		List<KnownIssue> knownIssues = getKnownIssues(logEntries);
+
+		KnownIssue portalConnectorEx = createPortalConnectorIssue();
+		assertThat(knownIssues).containsOnly(portalConnectorEx);
+	}
+
+	private KnownIssue createPortalConnectorIssue() {
+		return new KnownIssue("IVYPORTAL-5617", "PortalConnector throws 403", Arrays.asList("None"),
+				"You should not have two portals running simultaneously. "
+						+ "Try disabling the Portal in your default application. After rebooting your engine it should be fixed.",
+				Arrays.asList("org.apache.axis2.AxisFault: Transport error: 403 Error",
+						"org.apache.axis2.transport.http.HTTPSender.handleResponse"));
+	}
+
 	private List<KnownIssue> getKnownIssues(List<MainLogEntry> logEntries) {
 		IssuesParser parser = new IssuesParser();
 		parser.setLogEntries(logEntries);

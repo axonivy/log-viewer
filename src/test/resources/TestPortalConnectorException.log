@@ -1,0 +1,479 @@
+01:00:01.236 INFO [ch.ivyteam.server] [Windows Service Main Thread] []
+  Stopping Axon.ivy Engine ...
+01:06:54.466 INFO [ch.ivyteam.log.LoggerFactory] [Windows Service Main Thread] []
+  LOAD LOG4J: Use user.dir configuration file: C:\AxonIvyEngine\AxonIvyEngine_7.0\configuration\log4jconfig.xml
+01:06:54.794 INFO [ch.ivyteam.server] [Windows Service Main Thread] []
+          _                        _
+         / \  __  _____  _ __     (_)_   ___   _
+        / _ \ \ \/ / _ \| '_ \    | \ \ / / | | |
+       / ___ \ >  < (_) | | | | _ | |\ V /| |_| |
+      /_/   \_/_/\_\___/|_| |_|(_)|_| \_/  \__, |
+                                           |___/
+  -----------------------------------------------------
+  Axon.ivy Engine
+  Version 7.0 Patch 4 Revision 58124
+  Copyright (c) 2001-2017 AXON IVY AG
+  -----------------------------------------------------
+  Java Version 1.8.0_144 (Oracle Corporation)
+  JVM Version 25.144-b01 (Java HotSpot(TM) 64-Bit Server VM)
+  -----------------------------------------------------
+01:06:54.794 INFO [ch.ivyteam.server] [Windows Service Main Thread] []
+  Starting Axon.ivy Engine ...
+01:06:58.278 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [  0%] Initializing server
+01:06:58.294 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [  1%] JMX service started [16ms]
+01:06:58.294 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [  2%] Job Manager started [0ms]
+01:06:58.294 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [  3%] Background Jobs Starter started [0ms]
+01:06:58.419 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [  5%] Extension Manager started [125ms]
+01:06:58.591 INFO [ch.ivyteam.db.jdbc.util] [Windows Service Main Thread] [executionContext=SYSTEM]
+  Set System Property "ch.ivyteam.db.jdbc.isvalidstatement.jTDS Type 4 JDBC Driver for MS SQL Server and Sybase" to overwrite the is Valid Query for JDBC Driver ch.ivyteam.db.jdbc.isvalidstatement.jTDS Type 4 JDBC Driver for MS SQL Server and Sybase
+01:06:58.731 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [  6%] Persistency Manager started [312ms]
+01:06:58.731 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [  7%] Single server cluster manager started [0ms]
+01:07:01.356 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [  8%] Security Manager started [2625ms]
+01:07:02.700 INFO [ch.ivyteam.ivy.application.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  Cleaning up session directory C:\AxonIvyEngine\AxonIvyEngine_7.0\system\applications\System\files\session
+01:07:02.700 INFO [ch.ivyteam.ivy.application.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  Cleaning up session directory C:\AxonIvyEngine\AxonIvyEngine_7.0\system\applications\Portal\files\session
+01:07:02.700 INFO [ch.ivyteam.ivy.application.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  Cleaning up session directory C:\AxonIvyEngine\Applicationsfolder\Qualit�tsmanagement\files\session
+01:07:02.716 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [ 10%] Application Configuration Manager started [1360ms]
+01:07:02.731 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [ 11%] Resource Data Model Provider Manager started [0ms]
+01:07:02.731 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [ 12%] Project Manager started [0ms]
+01:07:02.809 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [ 14%] Role Configuration Manager started [78ms]
+01:07:02.950 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [ 15%] Library Configuration Manager started [141ms]
+01:07:02.981 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [ 16%] Rest Client Manager started [0ms]
+01:07:02.981 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [ 17%] External Database Configuration Manager started [0ms]
+01:07:02.997 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [ 19%] Override Manager started [16ms]
+01:07:03.325 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [ 20%] Process Manager started [328ms]
+01:07:03.341 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [ 21%] Case Map Manager started [0ms]
+01:07:03.341 INFO [ch.ivyteam.ivy.server.internal] [async-starter-thread-1] [executionContext=SYSTEM]
+  [ 23%] Business Data Manager started [610ms]
+01:07:03.372 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [ 24%] Java Configuration Manager started [31ms]
+01:07:03.372 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [ 25%] IvyScript Manager started [0ms]
+01:07:03.387 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [ 26%] Process Data Persistence Manager started [15ms]
+01:07:03.403 INFO [ch.ivyteam.ivy.server.internal] [Windows Service Main Thread] [executionContext=SYSTEM]
+  [ 28%] Global Variable Manager started [0ms]
+01:07:04.356 INFO [org.apache.tomcat.util.net.NioSelectorPool] [Windows Service Main Thread] [executionContext=SYSTEM]
+  Using a shared selector for servlet write/read
+01:07:04.466 INFO [org.apache.tomcat.util.net.NioSelectorPool] [Windows Service Main Thread] [executionContext=SYSTEM]
+  Using a shared selector for servlet write/read
+01:07:04.466 INFO [org.apache.coyote.ajp.AjpNioProtocol] [Windows Service Main Thread] [executionContext=SYSTEM]
+  Initializing ProtocolHandler ["ajp-nio-8009"]
+01:07:04.466 INFO [org.apache.tomcat.util.net.NioSelectorPool] [Windows Service Main Thread] [executionContext=SYSTEM]
+  Using a shared selector for servlet write/read
+01:07:04.637 INFO [org.apache.catalina.loader.WebappLoader] [localhost-startStop-1] []
+  Unknown loader org.eclipse.osgi.internal.loader.EquinoxClassLoader@3164edf[ch.ivyteam.ivy.server.exec:7.0.4.201804100708(id=199)] class org.eclipse.osgi.internal.loader.EquinoxClassLoader
+01:07:06.231 INFO [org.apache.jasper.servlet.TldScanner] [localhost-startStop-1] []
+  At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+01:07:06.466 INFO [org.apache.myfaces.config.DefaultFacesConfigurationProvider] [localhost-startStop-1] []
+  Reading standard config META-INF/standard-faces-config.xml
+01:07:06.684 INFO [org.apache.myfaces.config.DefaultFacesConfigurationProvider] [localhost-startStop-1] []
+  Reading config /WEB-INF/faces-config.xml
+01:07:25.325 INFO [org.quartz.impl.StdSchedulerFactory] [Windows Service Main Thread] [request=, session=0 (SYSTEM), application=201, requestId=6, executionContext=SYSTEM, pmv=Company$PortalKit$1]
+  Using default implementation for ThreadExecutor
+01:07:25.341 INFO [org.quartz.simpl.SimpleThreadPool] [Windows Service Main Thread] [request=, session=0 (SYSTEM), application=201, requestId=6, executionContext=SYSTEM, pmv=Company$PortalKit$1]
+  Job execution threads will use class loader of thread: Windows Service Main Thread
+01:07:25.372 INFO [org.quartz.core.SchedulerSignalerImpl] [Windows Service Main Thread] [request=, session=0 (SYSTEM), application=201, requestId=6, executionContext=SYSTEM, pmv=Company$PortalKit$1]
+  Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+01:07:25.372 INFO [org.quartz.core.QuartzScheduler] [Windows Service Main Thread] [request=, session=0 (SYSTEM), application=201, requestId=6, executionContext=SYSTEM, pmv=Company$PortalKit$1]
+  Quartz Scheduler v.2.1.1 created.
+01:07:25.372 INFO [org.quartz.simpl.RAMJobStore] [Windows Service Main Thread] [request=, session=0 (SYSTEM), application=201, requestId=6, executionContext=SYSTEM, pmv=Company$PortalKit$1]
+  RAMJobStore initialized.
+01:07:25.372 INFO [org.quartz.core.QuartzScheduler] [Windows Service Main Thread] [request=, session=0 (SYSTEM), application=201, requestId=6, executionContext=SYSTEM, pmv=Company$PortalKit$1]
+  Scheduler meta-data: Quartz Scheduler (v2.1.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+    Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+    NOT STARTED.
+    Currently in standby mode.
+    Number of jobs executed: 0
+    Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+    Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+01:07:25.372 INFO [org.quartz.impl.StdSchedulerFactory] [Windows Service Main Thread] [request=, session=0 (SYSTEM), application=201, requestId=6, executionContext=SYSTEM, pmv=Company$PortalKit$1]
+  Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+01:07:25.372 INFO [org.quartz.impl.StdSchedulerFactory] [Windows Service Main Thread] [request=, session=0 (SYSTEM), application=201, requestId=6, executionContext=SYSTEM, pmv=Company$PortalKit$1]
+  Quartz scheduler version: 2.1.1
+05:00:02.618 INFO [org.apache.axis2.transport.http.HTTPSender] [ivy background operation pool-thread-2] [request=call(52102.52602.0.0), session=0 (SYSTEM), task=52602, application=201, requestId=21, executionContext=SYSTEM, pmv=Company$PortalKit$1, processElement=154F0F14C9113E05-f3]
+  Unable to sendViaPost to url[http://localhost:8080/ivy/ws/System/PortalConnector/154F054217050170]
+    org.apache.axis2.AxisFault: Transport error: 403 Error:
+    	at org.apache.axis2.transport.http.HTTPSender.handleResponse(HTTPSender.java:298)
+    	at org.apache.axis2.transport.http.HTTPSender.sendViaPost(HTTPSender.java:192)
+    	at org.apache.axis2.transport.http.HTTPSender.send(HTTPSender.java:77)
+    	at org.apache.axis2.transport.http.CommonsHTTPTransportSender.writeMessageWithCommons(CommonsHTTPTransportSender.java:327)
+    	at org.apache.axis2.transport.http.CommonsHTTPTransportSender.invoke(CommonsHTTPTransportSender.java:206)
+    	at org.apache.axis2.engine.AxisEngine.send(AxisEngine.java:396)
+    	at org.apache.axis2.description.OutInAxisOperationClient.send(OutInAxisOperation.java:374)
+    	at org.apache.axis2.description.OutInAxisOperationClient.executeImpl(OutInAxisOperation.java:211)
+    	at org.apache.axis2.client.OperationClient.execute(OperationClient.java:163)
+    	at ch.ivy.ws.addon.ApplicationServiceServiceStub.getApplicationsByAppNames(ApplicationServiceServiceStub.java:172)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    	at java.lang.reflect.Method.invoke(Method.java:498)
+    	at ch.ivyteam.ivy.webservice.restricted.exec.axis2.WebServiceCallAxis2.invokeMethod(WebServiceCallAxis2.java:420)
+    	at ch.ivyteam.ivy.webservice.restricted.exec.axis2.WebServiceCallAxis2.executeCall(WebServiceCallAxis2.java:240)
+    	at ch.ivyteam.ivy.webservice.restricted.exec.axis2.WebServiceCallAxis2.perform(WebServiceCallAxis2.java:193)
+    	at ch.ivyteam.ivy.bpm.exec.internal.activity.webservicecall.WebserviceCallAxisStub.executeAxis2WebServiceCall(WebserviceCallAxisStub.java:129)
+    	at ch.ivyteam.ivy.bpm.exec.internal.activity.webservicecall.WebserviceCallAxisStub.execute(WebserviceCallAxisStub.java:78)
+    	at ch.ivyteam.ivy.bpm.exec.internal.activity.webservicecall.WebserviceCallAxisStub.executeWebServiceCall(WebserviceCallAxisStub.java:50)
+    	at ch.ivyteam.ivy.bpm.exec.internal.activity.webservicecall.WebserviceCallBackgroundOperation.execute(WebserviceCallBackgroundOperation.java:60)
+    	at ch.ivyteam.ivy.bpm.engine.internal.background.wrapper.BackgroundOperationWrapper.execute(BackgroundOperationWrapper.java:24)
+    	at ch.ivyteam.ivy.bpm.engine.internal.background.wrapper.ExecuteBackgroundOperationInRequestThreadContextWrapper.execute(ExecuteBackgroundOperationInRequestThreadContextWrapper.java:26)
+    	at ch.ivyteam.ivy.bpm.engine.internal.background.BackgroundTask.call(BackgroundTask.java:40)
+    	at ch.ivyteam.ivy.bpm.engine.internal.background.BackgroundTask.call(BackgroundTask.java:1)
+    	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    	at java.lang.Thread.run(Thread.java:748)
+05:00:02.618 WARN [org.apache.cxf.phase.PhaseInterceptorChain] [http-nio-8080-exec-2] [requestId=25, executionContext=SYSTEM, client=127.0.0.1]
+  Interceptor for {http://addon.ws.ivy.ch/}ApplicationServiceService#{http://addon.ws.ivy.ch/}getApplicationsByAppNames has thrown exception, unwinding now
+    org.apache.cxf.interceptor.Fault: Wrong password
+    	at ch.ivyteam.ivy.webservice.process.internal.authentication.HttpBasicAuthenticationInterceptor.handleMessage(HttpBasicAuthenticationInterceptor.java:75)
+    	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:255)
+    	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:113)
+    	at org.apache.cxf.transport.servlet.ServletDestination.invoke(ServletDestination.java:102)
+    	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:464)
+    	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:188)
+    	at org.apache.cxf.transport.servlet.AbstractCXFServlet.invoke(AbstractCXFServlet.java:148)
+    	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:179)
+    	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doPost(AbstractHTTPServlet.java:103)
+    	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+    	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:159)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at ch.ivyteam.ivy.webserver.internal.IvyFilter.doFilterInternal(IvyFilter.java:247)
+    	at ch.ivyteam.ivy.webserver.internal.IvyFilter.doFilter(IvyFilter.java:152)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at ch.ivyteam.ivy.webserver.internal.IvyExecuteAsSystemFilter$1.call(IvyExecuteAsSystemFilter.java:45)
+    	at ch.ivyteam.ivy.webserver.internal.IvyExecuteAsSystemFilter$1.call(IvyExecuteAsSystemFilter.java:1)
+    	at ch.ivyteam.ivy.security.internal.SecurityManager.executeAsSystem(SecurityManager.java:1313)
+    	at ch.ivyteam.ivy.webserver.internal.IvyExecuteAsSystemFilter.doFilter(IvyExecuteAsSystemFilter.java:39)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at org.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:124)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at ch.ivyteam.ivy.webserver.internal.startup.IvyEngineUnavailableFilter.doFilter(IvyEngineUnavailableFilter.java:46)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at ch.ivyteam.ivy.webserver.internal.filter.IvyCurrentHttpRequestFilter.doFilter(IvyCurrentHttpRequestFilter.java:39)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at com.google.inject.servlet.FilterChainInvocation.doFilter(FilterChainInvocation.java:89)
+    	at com.google.inject.servlet.ManagedFilterPipeline.dispatch(ManagedFilterPipeline.java:120)
+    	at com.google.inject.servlet.GuiceFilter.doFilter(GuiceFilter.java:135)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+    	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+    	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+    	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+    	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+    	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+    	at ch.ivyteam.ivy.webserver.internal.PerformanceLogValve.invoke(PerformanceLogValve.java:55)
+    	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+    	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+    	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+    	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+    	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1457)
+    	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+    	at java.lang.Thread.run(Thread.java:748)
+    [errorId=16385CA119B1594C, requestId=25, executionContext=SYSTEM, client=127.0.0.1]
+    Caused by: ch.ivyteam.ivy.security.AuthenticationException: Wrong password
+    	at ch.ivyteam.ivy.security.internal.User.authenticateUser(User.java:566)
+    	at ch.ivyteam.ivy.security.internal.SecurityContext.authenticateInternalUser(SecurityContext.java:963)
+    	at ch.ivyteam.ivy.security.internal.ivy.IvySecuritySystem.authenticateUser(IvySecuritySystem.java:170)
+    	at ch.ivyteam.ivy.security.internal.SecurityContext.authenticateUser(SecurityContext.java:927)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser_aroundBody10(Session.java:228)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser_aroundBody11$advice(Session.java:31)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser(Session.java:1)
+    	at ch.ivyteam.ivy.security.internal.Session.lambda$0(Session.java:191)
+    	at ch.ivyteam.ivy.persistence.ITransactionExecutableWithoutResult.execute(ITransactionExecutableWithoutResult.java:9)
+    	at ch.ivyteam.ivy.persistence.ITransactionExecutableWithoutResult.execute(ITransactionExecutableWithoutResult.java:1)
+    	at ch.ivyteam.ivy.persistence.base.AbstractPersistencyService.execute(AbstractPersistencyService.java:177)
+    	at ch.ivyteam.ivy.persistence.base.AbstractPersistencyService.executeWithoutResult(AbstractPersistencyService.java:201)
+    	at ch.ivyteam.ivy.persistence.base.ClassPersistencyService.executeWithoutResult(ClassPersistencyService.java:682)
+    	at ch.ivyteam.ivy.persistence.client.PersistentClientObjectChildren.executeWithoutResult(PersistentClientObjectChildren.java:497)
+    	at ch.ivyteam.ivy.security.internal.SecurityContext.executeWithoutResult(SecurityContext.java:1058)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser_aroundBody8(Session.java:187)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser_aroundBody9$advice(Session.java:34)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser(Session.java:1)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser(Session.java:175)
+    	at ch.ivyteam.ivy.request.restricted.AuthenticatedUserCache.authenticateUser(AuthenticatedUserCache.java:39)
+    	at ch.ivyteam.ivy.webservice.process.internal.authentication.HttpBasicAuthenticationInterceptor.authenticateUser(HttpBasicAuthenticationInterceptor.java:87)
+    	at ch.ivyteam.ivy.webservice.process.internal.authentication.HttpBasicAuthenticationInterceptor.handleMessage(HttpBasicAuthenticationInterceptor.java:70)
+    	... 53 more
+07:11:15.196 WARN [org.apache.cxf.phase.PhaseInterceptorChain] [http-nio-8080-exec-3] [requestId=53, executionContext=SYSTEM, client=127.0.0.1]
+  Interceptor for {http://addon.ws.ivy.ch/}TaskServiceService#{http://addon.ws.ivy.ch/}findGroupTaskCategories has thrown exception, unwinding now
+    org.apache.cxf.interceptor.Fault: Wrong password
+    	at ch.ivyteam.ivy.webservice.process.internal.authentication.HttpBasicAuthenticationInterceptor.handleMessage(HttpBasicAuthenticationInterceptor.java:75)
+    	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:255)
+    	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:113)
+    	at org.apache.cxf.transport.servlet.ServletDestination.invoke(ServletDestination.java:102)
+    	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:464)
+    	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:188)
+    	at org.apache.cxf.transport.servlet.AbstractCXFServlet.invoke(AbstractCXFServlet.java:148)
+    	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:179)
+    	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doPost(AbstractHTTPServlet.java:103)
+    	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+    	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:159)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at ch.ivyteam.ivy.webserver.internal.IvyFilter.doFilterInternal(IvyFilter.java:247)
+    	at ch.ivyteam.ivy.webserver.internal.IvyFilter.doFilter(IvyFilter.java:152)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at ch.ivyteam.ivy.webserver.internal.IvyExecuteAsSystemFilter$1.call(IvyExecuteAsSystemFilter.java:45)
+    	at ch.ivyteam.ivy.webserver.internal.IvyExecuteAsSystemFilter$1.call(IvyExecuteAsSystemFilter.java:1)
+    	at ch.ivyteam.ivy.security.internal.SecurityManager.executeAsSystem(SecurityManager.java:1313)
+    	at ch.ivyteam.ivy.webserver.internal.IvyExecuteAsSystemFilter.doFilter(IvyExecuteAsSystemFilter.java:39)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at org.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:124)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at ch.ivyteam.ivy.webserver.internal.startup.IvyEngineUnavailableFilter.doFilter(IvyEngineUnavailableFilter.java:46)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at ch.ivyteam.ivy.webserver.internal.filter.IvyCurrentHttpRequestFilter.doFilter(IvyCurrentHttpRequestFilter.java:39)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at com.google.inject.servlet.FilterChainInvocation.doFilter(FilterChainInvocation.java:89)
+    	at com.google.inject.servlet.ManagedFilterPipeline.dispatch(ManagedFilterPipeline.java:120)
+    	at com.google.inject.servlet.GuiceFilter.doFilter(GuiceFilter.java:135)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+    	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+    	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+    	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+    	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+    	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+    	at ch.ivyteam.ivy.webserver.internal.PerformanceLogValve.invoke(PerformanceLogValve.java:55)
+    	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+    	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+    	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+    	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+    	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1457)
+    	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+    	at java.lang.Thread.run(Thread.java:748)
+    [errorId=163864231FCCA9C3, requestId=53, executionContext=SYSTEM, client=127.0.0.1]
+    Caused by: ch.ivyteam.ivy.security.AuthenticationException: Wrong password
+    	at ch.ivyteam.ivy.security.internal.User.authenticateUser(User.java:566)
+    	at ch.ivyteam.ivy.security.internal.SecurityContext.authenticateInternalUser(SecurityContext.java:963)
+    	at ch.ivyteam.ivy.security.internal.ivy.IvySecuritySystem.authenticateUser(IvySecuritySystem.java:170)
+    	at ch.ivyteam.ivy.security.internal.SecurityContext.authenticateUser(SecurityContext.java:927)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser_aroundBody10(Session.java:228)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser_aroundBody11$advice(Session.java:31)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser(Session.java:1)
+    	at ch.ivyteam.ivy.security.internal.Session.lambda$0(Session.java:191)
+    	at ch.ivyteam.ivy.persistence.ITransactionExecutableWithoutResult.execute(ITransactionExecutableWithoutResult.java:9)
+    	at ch.ivyteam.ivy.persistence.ITransactionExecutableWithoutResult.execute(ITransactionExecutableWithoutResult.java:1)
+    	at ch.ivyteam.ivy.persistence.base.AbstractPersistencyService.execute(AbstractPersistencyService.java:177)
+    	at ch.ivyteam.ivy.persistence.base.AbstractPersistencyService.executeWithoutResult(AbstractPersistencyService.java:201)
+    	at ch.ivyteam.ivy.persistence.base.ClassPersistencyService.executeWithoutResult(ClassPersistencyService.java:682)
+    	at ch.ivyteam.ivy.persistence.client.PersistentClientObjectChildren.executeWithoutResult(PersistentClientObjectChildren.java:497)
+    	at ch.ivyteam.ivy.security.internal.SecurityContext.executeWithoutResult(SecurityContext.java:1058)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser_aroundBody8(Session.java:187)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser_aroundBody9$advice(Session.java:34)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser(Session.java:1)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser(Session.java:175)
+    	at ch.ivyteam.ivy.request.restricted.AuthenticatedUserCache.authenticateUser(AuthenticatedUserCache.java:39)
+    	at ch.ivyteam.ivy.webservice.process.internal.authentication.HttpBasicAuthenticationInterceptor.authenticateUser(HttpBasicAuthenticationInterceptor.java:87)
+    	at ch.ivyteam.ivy.webservice.process.internal.authentication.HttpBasicAuthenticationInterceptor.handleMessage(HttpBasicAuthenticationInterceptor.java:70)
+    	... 53 more
+07:11:15.196 ERROR [runtimelog.Company.PortalKit.user_code] [ajp-nio-8009-exec-1] [request=HTTP GET call(52111.52610.20.2), session=13 (Plath), task=52610, application=201, requestId=47, executionContext=13 (Plath), pmv=Company$PortalKit$1, hd=ch.ivy.addon.portal.generic.PortalTaskMenu, processElement=14E8BC51CC56193A-f7]
+  Transport error: 403 Error:
+07:11:53.868 ERROR [runtimelog.Company.PortalKit.user_code] [ajp-nio-8009-exec-4] [request=HTTP GET call(52111.52610.22.3), session=13 (Plath), task=52610, application=201, requestId=107, executionContext=13 (Plath), pmv=Company$PortalKit$1, hd=ch.ivy.addon.portal.generic.PortalTaskMenu, processElement=152AA5CA98B525F2-f3]
+  Web service error with:
+  - User text: Die Axon.ivy Engine {0} oder deren Portal ist nicht erreichbar.
+  - Help text: null
+  - Error code: 11.001
+07:11:54.024 WARN [org.apache.cxf.phase.PhaseInterceptorChain] [http-nio-8080-exec-3] [requestId=113, executionContext=SYSTEM, client=127.0.0.1]
+  Interceptor for {http://addon.ws.ivy.ch/}TaskServiceService#{http://addon.ws.ivy.ch/}findGroupTaskCategories has thrown exception, unwinding now
+    org.apache.cxf.interceptor.Fault: Wrong password
+    	at ch.ivyteam.ivy.webservice.process.internal.authentication.HttpBasicAuthenticationInterceptor.handleMessage(HttpBasicAuthenticationInterceptor.java:75)
+    	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:255)
+    	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:113)
+    	at org.apache.cxf.transport.servlet.ServletDestination.invoke(ServletDestination.java:102)
+    	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:464)
+    	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:188)
+    	at org.apache.cxf.transport.servlet.AbstractCXFServlet.invoke(AbstractCXFServlet.java:148)
+    	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:179)
+    	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doPost(AbstractHTTPServlet.java:103)
+    	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+    	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:159)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at ch.ivyteam.ivy.webserver.internal.IvyFilter.doFilterInternal(IvyFilter.java:247)
+    	at ch.ivyteam.ivy.webserver.internal.IvyFilter.doFilter(IvyFilter.java:152)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at ch.ivyteam.ivy.webserver.internal.IvyExecuteAsSystemFilter$1.call(IvyExecuteAsSystemFilter.java:45)
+    	at ch.ivyteam.ivy.webserver.internal.IvyExecuteAsSystemFilter$1.call(IvyExecuteAsSystemFilter.java:1)
+    	at ch.ivyteam.ivy.security.internal.SecurityManager.executeAsSystem(SecurityManager.java:1313)
+    	at ch.ivyteam.ivy.webserver.internal.IvyExecuteAsSystemFilter.doFilter(IvyExecuteAsSystemFilter.java:39)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at org.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:124)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at ch.ivyteam.ivy.webserver.internal.startup.IvyEngineUnavailableFilter.doFilter(IvyEngineUnavailableFilter.java:46)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at ch.ivyteam.ivy.webserver.internal.filter.IvyCurrentHttpRequestFilter.doFilter(IvyCurrentHttpRequestFilter.java:39)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at com.google.inject.servlet.FilterChainInvocation.doFilter(FilterChainInvocation.java:89)
+    	at com.google.inject.servlet.ManagedFilterPipeline.dispatch(ManagedFilterPipeline.java:120)
+    	at com.google.inject.servlet.GuiceFilter.doFilter(GuiceFilter.java:135)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+    	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+    	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+    	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+    	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+    	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+    	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+    	at ch.ivyteam.ivy.webserver.internal.PerformanceLogValve.invoke(PerformanceLogValve.java:55)
+    	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+    	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+    	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+    	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+    	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1457)
+    	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+    	at java.lang.Thread.run(Thread.java:748)
+    [errorId=1638642C9989220F, requestId=113, executionContext=SYSTEM, client=127.0.0.1]
+    Caused by: ch.ivyteam.ivy.security.AuthenticationException: Wrong password
+    	at ch.ivyteam.ivy.security.internal.User.authenticateUser(User.java:566)
+    	at ch.ivyteam.ivy.security.internal.SecurityContext.authenticateInternalUser(SecurityContext.java:963)
+    	at ch.ivyteam.ivy.security.internal.ivy.IvySecuritySystem.authenticateUser(IvySecuritySystem.java:170)
+    	at ch.ivyteam.ivy.security.internal.SecurityContext.authenticateUser(SecurityContext.java:927)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser_aroundBody10(Session.java:228)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser_aroundBody11$advice(Session.java:31)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser(Session.java:1)
+    	at ch.ivyteam.ivy.security.internal.Session.lambda$0(Session.java:191)
+    	at ch.ivyteam.ivy.persistence.ITransactionExecutableWithoutResult.execute(ITransactionExecutableWithoutResult.java:9)
+    	at ch.ivyteam.ivy.persistence.ITransactionExecutableWithoutResult.execute(ITransactionExecutableWithoutResult.java:1)
+    	at ch.ivyteam.ivy.persistence.base.AbstractPersistencyService.execute(AbstractPersistencyService.java:177)
+    	at ch.ivyteam.ivy.persistence.base.AbstractPersistencyService.executeWithoutResult(AbstractPersistencyService.java:201)
+    	at ch.ivyteam.ivy.persistence.base.ClassPersistencyService.executeWithoutResult(ClassPersistencyService.java:682)
+    	at ch.ivyteam.ivy.persistence.client.PersistentClientObjectChildren.executeWithoutResult(PersistentClientObjectChildren.java:497)
+    	at ch.ivyteam.ivy.security.internal.SecurityContext.executeWithoutResult(SecurityContext.java:1058)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser_aroundBody8(Session.java:187)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser_aroundBody9$advice(Session.java:34)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser(Session.java:1)
+    	at ch.ivyteam.ivy.security.internal.Session.authenticateSessionUser(Session.java:175)
+    	at ch.ivyteam.ivy.request.restricted.AuthenticatedUserCache.authenticateUser(AuthenticatedUserCache.java:39)
+    	at ch.ivyteam.ivy.webservice.process.internal.authentication.HttpBasicAuthenticationInterceptor.authenticateUser(HttpBasicAuthenticationInterceptor.java:87)
+    	at ch.ivyteam.ivy.webservice.process.internal.authentication.HttpBasicAuthenticationInterceptor.handleMessage(HttpBasicAuthenticationInterceptor.java:70)
+    	... 53 more
+07:11:54.024 INFO [org.apache.axis2.transport.http.HTTPSender] [ivy background operation pool-thread-1] [request=HTTP GET call(52111.52610.22.0), session=13 (Plath), task=52610, application=201, requestId=107, executionContext=SYSTEM, pmv=Company$PortalKit$1, processElement=14E8BC51CC56193A-f173]
+  Unable to sendViaPost to url[http://localhost:8080/ivy/ws/System/PortalConnector/1380566F9095B9C4]
+    org.apache.axis2.AxisFault: Transport error: 403 Error:
+    	at org.apache.axis2.transport.http.HTTPSender.handleResponse(HTTPSender.java:298)
+    	at org.apache.axis2.transport.http.HTTPSender.sendViaPost(HTTPSender.java:192)
+    	at org.apache.axis2.transport.http.HTTPSender.send(HTTPSender.java:77)
+    	at org.apache.axis2.transport.http.CommonsHTTPTransportSender.writeMessageWithCommons(CommonsHTTPTransportSender.java:327)
+    	at org.apache.axis2.transport.http.CommonsHTTPTransportSender.invoke(CommonsHTTPTransportSender.java:206)
+    	at org.apache.axis2.engine.AxisEngine.send(AxisEngine.java:396)
+    	at org.apache.axis2.description.OutInAxisOperationClient.send(OutInAxisOperation.java:374)
+    	at org.apache.axis2.description.OutInAxisOperationClient.executeImpl(OutInAxisOperation.java:211)
+    	at org.apache.axis2.client.OperationClient.execute(OperationClient.java:163)
+    	at ch.ivy.ws.addon.TaskServiceServiceStub.findGroupTaskCategories(TaskServiceServiceStub.java:742)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    	at java.lang.reflect.Method.invoke(Method.java:498)
+    	at ch.ivyteam.ivy.webservice.restricted.exec.axis2.WebServiceCallAxis2.invokeMethod(WebServiceCallAxis2.java:420)
+    	at ch.ivyteam.ivy.webservice.restricted.exec.axis2.WebServiceCallAxis2.executeCall(WebServiceCallAxis2.java:240)
+    	at ch.ivyteam.ivy.webservice.restricted.exec.axis2.WebServiceCallAxis2.perform(WebServiceCallAxis2.java:193)
+    	at ch.ivyteam.ivy.bpm.exec.internal.activity.webservicecall.WebserviceCallAxisStub.executeAxis2WebServiceCall(WebserviceCallAxisStub.java:129)
+    	at ch.ivyteam.ivy.bpm.exec.internal.activity.webservicecall.WebserviceCallAxisStub.execute(WebserviceCallAxisStub.java:78)
+    	at ch.ivyteam.ivy.bpm.exec.internal.activity.webservicecall.WebserviceCallAxisStub.executeWebServiceCall(WebserviceCallAxisStub.java:50)
+    	at ch.ivyteam.ivy.bpm.exec.internal.activity.webservicecall.WebserviceCallBackgroundOperation.execute(WebserviceCallBackgroundOperation.java:60)
+    	at ch.ivyteam.ivy.bpm.engine.internal.background.wrapper.BackgroundOperationWrapper.execute(BackgroundOperationWrapper.java:24)
+    	at ch.ivyteam.ivy.bpm.engine.internal.background.wrapper.ExecuteBackgroundOperationInRequestThreadContextWrapper.execute(ExecuteBackgroundOperationInRequestThreadContextWrapper.java:26)
+    	at ch.ivyteam.ivy.bpm.engine.internal.background.BackgroundTask.call(BackgroundTask.java:40)
+    	at ch.ivyteam.ivy.bpm.engine.internal.background.BackgroundTask.call(BackgroundTask.java:1)
+    	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    	at java.lang.Thread.run(Thread.java:748)
+07:11:54.024 ERROR [runtimelog.Company.PortalKit.web_service] [ivy background operation pool-thread-1] [request=HTTP GET call(52111.52610.22.0), session=13 (Plath), task=52610, application=201, requestId=107, executionContext=SYSTEM, pmv=Company$PortalKit$1, processElement=14E8BC51CC56193A-f173]
+  Web Service Element: Call to http://localhost:8080/ivy/ws/System/PortalConnector/1380566F9095B9C4 (Operation[name=findGroupTaskCategories,port=TaskServicePort,parameters=[TypedMapping /name=arg0.findGroupTaskCategories.apps /type=Array<String> /expression=in.applicationNames, TypedMapping /name=arg0.findGroupTaskCategories.jsonQuery /type=String /expression=in.jsonQuery, TypedMapping /name=arg0.findGroupTaskCategories.language /type=String /expression=in.language, TypedMapping /name=arg0.findGroupTaskCategories.userName /type=String /expression=in.taskCategoryRequester],parameterMappingOptions=RequestParameterMappingOptions[mapNullValues=false,autoInitializeFirstLevelFields=true]]) failed !
+  *** PARAMETERS ***
+   name : arg0
+   value  findGroupTaskCategories
+     apps : [Ljava.lang.String;@7227d2bb
+     jsonQuery :
+     language : de-CH
+     userName : Plath
+  *** RESPONSE ***
+  Exception's localizedMessage: Transport error: 403 Error: , message: Transport error: 403 Error:
+    org.apache.axis2.AxisFault: Transport error: 403 Error:
+    	at org.apache.axis2.transport.http.HTTPSender.handleResponse(HTTPSender.java:298)
+    	at org.apache.axis2.transport.http.HTTPSender.sendViaPost(HTTPSender.java:192)
+    	at org.apache.axis2.transport.http.HTTPSender.send(HTTPSender.java:77)
+    	at org.apache.axis2.transport.http.CommonsHTTPTransportSender.writeMessageWithCommons(CommonsHTTPTransportSender.java:327)
+    	at org.apache.axis2.transport.http.CommonsHTTPTransportSender.invoke(CommonsHTTPTransportSender.java:206)
+    	at org.apache.axis2.engine.AxisEngine.send(AxisEngine.java:396)
+    	at org.apache.axis2.description.OutInAxisOperationClient.send(OutInAxisOperation.java:374)
+    	at org.apache.axis2.description.OutInAxisOperationClient.executeImpl(OutInAxisOperation.java:211)
+    	at org.apache.axis2.client.OperationClient.execute(OperationClient.java:163)
+    	at ch.ivy.ws.addon.TaskServiceServiceStub.findGroupTaskCategories(TaskServiceServiceStub.java:742)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    	at java.lang.reflect.Method.invoke(Method.java:498)
+    	at ch.ivyteam.ivy.webservice.restricted.exec.axis2.WebServiceCallAxis2.invokeMethod(WebServiceCallAxis2.java:420)
+    	at ch.ivyteam.ivy.webservice.restricted.exec.axis2.WebServiceCallAxis2.executeCall(WebServiceCallAxis2.java:240)
+    	at ch.ivyteam.ivy.webservice.restricted.exec.axis2.WebServiceCallAxis2.perform(WebServiceCallAxis2.java:193)
+    	at ch.ivyteam.ivy.bpm.exec.internal.activity.webservicecall.WebserviceCallAxisStub.executeAxis2WebServiceCall(WebserviceCallAxisStub.java:129)
+    	at ch.ivyteam.ivy.bpm.exec.internal.activity.webservicecall.WebserviceCallAxisStub.execute(WebserviceCallAxisStub.java:78)
+    	at ch.ivyteam.ivy.bpm.exec.internal.activity.webservicecall.WebserviceCallAxisStub.executeWebServiceCall(WebserviceCallAxisStub.java:50)
+    	at ch.ivyteam.ivy.bpm.exec.internal.activity.webservicecall.WebserviceCallBackgroundOperation.execute(WebserviceCallBackgroundOperation.java:60)
+    	at ch.ivyteam.ivy.bpm.engine.internal.background.wrapper.BackgroundOperationWrapper.execute(BackgroundOperationWrapper.java:24)
+    	at ch.ivyteam.ivy.bpm.engine.internal.background.wrapper.ExecuteBackgroundOperationInRequestThreadContextWrapper.execute(ExecuteBackgroundOperationInRequestThreadContextWrapper.java:26)
+    	at ch.ivyteam.ivy.bpm.engine.internal.background.BackgroundTask.call(BackgroundTask.java:40)
+    	at ch.ivyteam.ivy.bpm.engine.internal.background.BackgroundTask.call(BackgroundTask.java:1)
+    	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    	at java.lang.Thread.run(Thread.java:748)
+07:11:54.024 ERROR [runtimelog.Company.PortalKit.user_code] [ajp-nio-8009-exec-4] [request=HTTP GET call(52111.52610.22.2), session=13 (Plath), task=52610, application=201, requestId=107, executionContext=13 (Plath), pmv=Company$PortalKit$1, hd=ch.ivy.addon.portal.generic.PortalTaskMenu, processElement=14E8BC51CC56193A-f7]
+  Transport error: 403 Error:
