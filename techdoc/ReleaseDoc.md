@@ -6,6 +6,9 @@
  * Search for a substring of the title -> the entry should be found
  * Search for a substring in an exception message -> the entry should be found
  * Select an entry and copy it to a text editor -> it should look the same as the one found in the log file
+ * Milton
+    * Analyse testlogs -> it should find issues
+    * Find a issue -> number of "issues found" should be right
 
 ## Release zip
  * Increase version number in pom.xml (use versions plugin in the future)
