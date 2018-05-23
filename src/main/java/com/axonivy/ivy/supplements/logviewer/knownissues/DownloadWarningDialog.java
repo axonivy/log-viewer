@@ -11,9 +11,9 @@ import javafx.stage.Stage;
 public class DownloadWarningDialog {
 	public static boolean showWarning() {
 		Alert alert = new Alert(AlertType.CONFIRMATION);
-		alert.setTitle("Warning");
+		alert.setTitle("Known Issues (Experimental)");
 		alert.setHeaderText("The IvyLogViewer will download a list of known issues. "
-				+ "No data will be uploaded.\n Do you want to continue?");
+				+ "No data will be uploaded.\nDo you want to continue?");
 
 		Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
 		stage.getIcons().add(new Image("/images/icon.png"));

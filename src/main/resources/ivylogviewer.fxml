@@ -31,7 +31,7 @@
         </Menu>
             <Menu mnemonicParsing="false" text="Analyse">
               <items>
-                <MenuItem fx:id="menuPointCheckKnownIssues" mnemonicParsing="false" text="Check known issues" />
+                <MenuItem fx:id="menuPointCheckKnownIssues" mnemonicParsing="false" text="Check for known issues" />
               </items>
             </Menu>
         <Menu mnemonicParsing="false" text="Help">

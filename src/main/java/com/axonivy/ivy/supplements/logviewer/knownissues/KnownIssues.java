@@ -36,7 +36,7 @@ public class KnownIssues {
 		Parent root = (Parent) fxmlLoader.load();
 		Scene scene = new Scene(root, 640, 320);
 		Stage stage = new Stage();
-		stage.setTitle("Experimental");
+		stage.setTitle("Known Issues (Experimental)");
 		stage.setScene(scene);
 
 		KnownIssuesController controller = fxmlLoader.<KnownIssuesController>getController();

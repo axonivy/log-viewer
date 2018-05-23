@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,18 +19,11 @@ import com.google.gson.stream.JsonReader;
 
 public class TestIssuesParser {
 
-	private List<MainLogEntry> logList;
-
 	@Test
 	public void testBrokenPipe() throws Exception {
-		File testLogFile = new File("src/test/resources/TestBrokenPipeIssueFinder.log");
+		List<MainLogEntry> logEntries = getLogList("src/test/resources/TestBrokenPipeIssueFinder.log");
+		List<KnownIssue> knownIssues = getKnownIssues(logEntries);
 
-		LogFileParser logFileParser = new LogFileParser(testLogFile);
-		logList = logFileParser.parse();
-
-		IssuesParser parser = new IssuesParser();
-		parser.setLogEntries(logList);
-		List<KnownIssue> knownIssues = parser.getKnownIssues();
 		KnownIssue brokenPipeIssue = createBrokenPipeIssue();
 		assertThat(knownIssues).containsOnly(brokenPipeIssue);
 	}
@@ -51,5 +45,44 @@ public class TestIssuesParser {
 		KnownIssuesWrapper jsonObject = gson.fromJson(
 				new JsonReader(new FileReader("src/test/resources/knownIssues.json")), KnownIssuesWrapper.class);
 		assertThat(jsonObject.knownIssues).isNotNull();
+	}
+
+	@Test
+	public void testEmptyStack() throws Exception {
+		List<MainLogEntry> logEntries = getLogList("src/test/resources/TestEmptyStackException.log");
+		List<KnownIssue> knownIssues = getKnownIssues(logEntries);
+
+		KnownIssue emptyStackIssue = createEmptyStackIssue();
+		assertThat(knownIssues).containsOnly(emptyStackIssue);
+	}
+
+	private KnownIssue createEmptyStackIssue() {
+		return new KnownIssue("XIVY-2538",
+				"EmptyStackException occurs if a task is reseted and a user want to submit the form",
+				Arrays.asList("6.0.14", "7.0.6", "7.2"), null, Arrays.asList("Caused by: java.util.EmptyStackException",
+						"ch.ivyteam.ivy.bpm.engine.internal.core.CallStack.checkEmptyStack"));
+	}
+
+	@Test
+	public void testEmptyStackAndBrokenPipe() throws Exception {
+		List<MainLogEntry> logEntries = getLogList("src/test/resources/TestEmptyStackAndBrokenPipe.log");
+		List<KnownIssue> knownIssues = getKnownIssues(logEntries);
+
+		KnownIssue brokenPipeIssue = createBrokenPipeIssue();
+		KnownIssue emptyStackIssue = createEmptyStackIssue();
+		assertThat(knownIssues).contains(brokenPipeIssue, emptyStackIssue);
+	}
+
+	private List<KnownIssue> getKnownIssues(List<MainLogEntry> logEntries) {
+		IssuesParser parser = new IssuesParser();
+		parser.setLogEntries(logEntries);
+		List<KnownIssue> knownIssues = parser.getKnownIssues();
+		return knownIssues;
+	}
+
+	private List<MainLogEntry> getLogList(String logFile) throws IOException {
+		File testLogFile = new File(logFile);
+		LogFileParser logFileParser = new LogFileParser(testLogFile);
+		return logFileParser.parse();
 	}
 }

@@ -47,15 +47,14 @@ public class KnownIssuesController implements Initializable {
 			@SuppressWarnings({ "unchecked", "rawtypes" })
 			public ListCell<String> call(ListView<String> list) {
 				final ListCell cell = new ListCell() {
+					private ImageView imageView;
+
 					@Override
 					public void updateItem(Object item, boolean empty) {
 						super.updateItem(item, empty);
 						if (!isEmpty()) {
-							ImageView imageView = new ImageView();
-							imageView.setId("imageView");
-							imageView.applyCss();
-							imageView.setImage(ISSUE_ICON);
-							// TODO: Position image correctly
+							imageView = new ImageView(ISSUE_ICON);
+							imageView.setId("image-view" + getId());
 							setGraphic(imageView);
 							setText(item.toString());
 							setWrapText(true);
@@ -77,10 +76,17 @@ public class KnownIssuesController implements Initializable {
 		ObservableList<String> items = FXCollections.observableArrayList();
 		for (KnownIssue issue : knownIssues) {
 			items.add(issue.issueID + ": " + issue.issueTitle + "\nFixed Versions: " + issue.fixedVersions
-					+ "\nWorkaround: \n" + issue.workaround);
+					+ addWorkaround(issue.workaround));
 		}
 		knownIssuesList.setItems(items);
-		foundIssuesLabel.setText(Integer.toString(items.size())+ " Issue(s) found");
+		foundIssuesLabel.setText(Integer.toString(items.size()) + " Issue(s) found");
+	}
+
+	private String addWorkaround(String workaround) {
+		if (workaround == null) {
+			return "";
+		}
+		return "\nWorkaround: \n" + workaround;
 	}
 
 	public void setLogEntries(List<MainLogEntry> logEntries) {
