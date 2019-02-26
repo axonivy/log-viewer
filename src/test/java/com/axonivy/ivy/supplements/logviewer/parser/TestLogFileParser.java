@@ -16,6 +16,8 @@ public class TestLogFileParser {
 	 */
 	@Test
 	public void parseLogFile() throws IOException {
+		//TODO: reduce amount of asserts per test
+
 		File testLogFile = new File("src/test/resources/testlog-rc.log");
 		List<File> testlogfiles = new ArrayList<File>();
 		testlogfiles.add(testLogFile);

@@ -14,7 +14,6 @@ import com.axonivy.ivy.supplements.logviewer.MainController;
 
 public class TestLogFileFilter {
 
-
 	private List<MainLogEntry> initLogList() throws IOException{
 		File testLogFile = new File("src/test/resources/testlog-rc.log");
 		List<File> testlogfiles = new ArrayList<File>();
