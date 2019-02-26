@@ -21,7 +21,7 @@ public class Main extends Application {
 	public void start(Stage stage) throws Exception {
 		Parent root = FXMLLoader.load(getClass().getResource("/ivylogviewer.fxml"));
 
-		Scene scene = new Scene(root, 640, 320);
+		Scene scene = new Scene(root, 800, 320);
 
 		stage.setTitle("IvyLogViewer");
 		stage.getIcons().add(new Image("/images/icon.png"));

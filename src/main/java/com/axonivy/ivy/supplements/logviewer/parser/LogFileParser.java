@@ -9,29 +9,28 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class LogFileParser {
-	private File file;
 	private List<MainLogEntry> logEntries = new ArrayList<>();
-
-	public LogFileParser(File file) {
-		this.file = file;
+	private List<File> files;
+	
+	public LogFileParser(List<File> files) {
+		this.files = files;
 	}
 
 	public List<MainLogEntry> parse() throws IOException {
 		// TODO check if parsing like that is performant enough, else only read headers
 		// TODO also support other encodings
-		try (Stream<String> lines = Files.lines(file.toPath(), StandardCharsets.ISO_8859_1)) {
-			lines.forEachOrdered(line -> {
-
-				if (!line.startsWith(" ")) {
-					createNewEntry(line);
-				} else {
-					appendToLastEntry(line);
-				}
-
-				// TODO check that last entry before EOF is included
-			});
+		for (File file : files) {
+			try (Stream<String> lines = Files.lines(file.toPath(), StandardCharsets.ISO_8859_1)) {
+				lines.forEachOrdered(line -> {
+					if (!line.startsWith(" ")) {
+						createNewEntry(line);
+					} else {
+						appendToLastEntry(line);
+					}
+					// TODO check that last entry before EOF is included
+				});
+			}
 		}
-
 		return logEntries;
 	}
 

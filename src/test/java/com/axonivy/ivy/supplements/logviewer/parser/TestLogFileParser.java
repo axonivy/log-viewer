@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,8 +17,10 @@ public class TestLogFileParser {
 	@Test
 	public void parseLogFile() throws IOException {
 		File testLogFile = new File("src/test/resources/testlog-rc.log");
+		List<File> testlogfiles = new ArrayList<File>();
+		testlogfiles.add(testLogFile);
 
-		LogFileParser logFileParser = new LogFileParser(testLogFile);
+		LogFileParser logFileParser = new LogFileParser(testlogfiles);
 		List<MainLogEntry> logList = logFileParser.parse();
 
 		assertThat(logList).hasSize(892);
@@ -48,25 +51,29 @@ public class TestLogFileParser {
 		List<MainLogEntry> debugs = logList.stream().filter(e -> e.getSeverity().equals(LogLevel.DEBUG))
 				.collect(Collectors.toList());
 		assertThat(debugs).hasSize(1);
-		
+
 		List<MainLogEntry> traces = logList.stream().filter(e -> e.getSeverity().equals(LogLevel.TRACE))
 				.collect(Collectors.toList());
 		assertThat(traces).hasSize(1);
 	}
-	
-	
+
+
 	@Test
 	public void testDetailLogEntry() throws IOException {
 		File testLogFile = new File("src/test/resources/testlog-rc.log");
+		List<File> testlogfiles = new ArrayList<File>();
+		testlogfiles.add(testLogFile);
 
-		LogFileParser logFileParser = new LogFileParser(testLogFile);
+		LogFileParser logFileParser = new LogFileParser(testlogfiles);
 		List<MainLogEntry> logList = logFileParser.parse();
-		
+
 		List<MainLogEntry> warnings = logList.stream().filter(e -> e.getSeverity().equals(LogLevel.WARN))
 				.collect(Collectors.toList());
 		assertThat(warnings).hasSize(4);
-		
+
 		MainLogEntry mainEntry = warnings.get(0);
 		assertThat(mainEntry.getDetailLogEntry().getDetailText()).startsWith("  Problem while processing request 'http://localhost:8080/ivy/pro/TestAPP/AngularWfDemo$1/1614CC1E96512AEA/createTestTask.ivp'");
 	}
+
+
 }
