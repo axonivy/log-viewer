@@ -472,7 +472,7 @@ public class MainController implements Initializable {
 				return true;
 			}
 			catch (Exception e) {
-				new ExceptionDialog().showException(e, "Please enter a valid timeformat (HH:mm:ss or HH:mm:ss.sss)");
+				new ExceptionDialog().showException(e, "Please enter  a valid timeformat (HH:mm:ss or HH:mm:ss.sss)");
 				return false;
 			}
 		}
