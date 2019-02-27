@@ -21,7 +21,7 @@ public class ExceptionDialog {
 		alert.setHeaderText("An exception occured");
 		alert.setContentText(ex.getMessage());
 		if(!msg.isEmpty()){
-			alert.setContentText(ex.getMessage() + "\n" + msg);
+			alert.setHeaderText("An exception occured" + "\n" + msg);
 		}
 		StringWriter sw = new StringWriter();
 		PrintWriter pw = new PrintWriter(sw);
