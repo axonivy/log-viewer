@@ -75,18 +75,17 @@ public class TestLogFileFilter {
 
 		List<MainLogEntry> filteredList = MainController.filterByTime("14:45:10", "14:45:11", logList);
 		List<MainLogEntry> orderedList = MainController.orderEntryListByChronology(filteredList);
-		orderedList.forEach(System.out::println);
 		assertEquals("14:45:10.195", orderedList.get(4).getTime());
 	}
 
 	@Test
 	public void validateDateStringExpectsFalse(){
-	assertEquals(false, MainController.validateTimeString("12:33:22", ""));
+		assertEquals(false, MainController.validateTimeString("12:33:22", ""));
 	}
 
 	@Test
 	public void validateDateStringExpectsTrue(){
-	assertEquals(true, MainController.validateTimeString("12:33:22", "12:33:24"));
+		assertEquals(true, MainController.validateTimeString("12:33:22", "12:33:24"));
 	}
 
 }
