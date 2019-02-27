@@ -11,17 +11,18 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 
 public class ExceptionDialog {
-	public void showException(Exception ex, String...strings) {
+	public void showException(Exception ex) {
+		showException(ex, null);
+	}
 
-		String exceptionMessage = "";
-		if(strings.length > 0){
-			exceptionMessage = strings[0];
-		}
-
+	public void showException(Exception ex, String msg){
 		Alert alert = new Alert(AlertType.ERROR);
 		alert.setTitle("Exception");
-		alert.setHeaderText("An exception occured" + "\n"+ exceptionMessage);
+		alert.setHeaderText("An exception occured");
 		alert.setContentText(ex.getMessage());
+		if(!msg.isEmpty()){
+			alert.setContentText(ex.getMessage() + "\n" + msg);
+		}
 		StringWriter sw = new StringWriter();
 		PrintWriter pw = new PrintWriter(sw);
 		ex.printStackTrace(pw);
