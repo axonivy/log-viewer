@@ -14,9 +14,12 @@ public class TestLogFileParser {
 	/*
 	 * This test tests the current state of parsing, which is not perfect yet.
 	 */
+
+	//TODO: reduce amount of asserts per test in this class
+
 	@Test
 	public void parseLogFile() throws IOException {
-		//TODO: reduce amount of asserts per test
+
 
 		File testLogFile = new File("src/test/resources/testlog-rc.log");
 		List<File> testlogfiles = new ArrayList<File>();

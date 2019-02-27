@@ -4,7 +4,7 @@ public class DetailLogEntry {
 
 	private MainLogEntry parentEntry;
 	private String detailText;
-	
+
 	public DetailLogEntry(MainLogEntry parentEntry, String detailText) {
 		this.parentEntry = parentEntry;
 		this.detailText = detailText;
@@ -17,11 +17,11 @@ public class DetailLogEntry {
 	public void addDetailLine(String detailLine) {
 		detailText += "\n" + detailLine;
 	}
-	
+
 	public String getDetailText() {
 		return detailText + "\n";
 	}
-	
+
 	@Override
 	public String toString() {
 		return getDetailText();
