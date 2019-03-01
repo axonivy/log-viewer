@@ -279,7 +279,7 @@ public class MainController implements Initializable {
 		minimalLevel.setOnAction(event -> {
 			selectedLogLevel = minimalLevel.getValue();
 			clearSearch();
-			displayLogEntries();
+			displayFilteredEntries(filterByTime(startTimeField.getText(), endTimeField.getText(), logEntries));
 		});
 
 		minimalLevel.setValue(selectedLogLevel);
