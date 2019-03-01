@@ -269,19 +269,24 @@ public class MainController implements Initializable {
 		endTimeField.setPromptText("EndTime");
 		applyNewFilter.setOnAction(event -> {
 			if(validateTimeString(startTimeField.getText(), endTimeField.getText())){
-				displayFilteredEntries(filterByTime(startTimeField.getText(), endTimeField.getText(), logEntries));
+				List<MainLogEntry> filteredEntries = filterByTime(startTimeField.getText(), endTimeField.getText(), logEntries);
+				displayFilteredEntries(filteredEntries);
+				setMinAndMaxTimeToTextboxes(filteredEntries);
 			}
 		});
 	}
 	private void configureMinLogLevelSelection() {
 		minimalLevel.getItems().addAll(FXCollections.observableArrayList(LogLevel.valuesDesc()));
-
 		minimalLevel.setOnAction(event -> {
 			selectedLogLevel = minimalLevel.getValue();
 			clearSearch();
-			displayFilteredEntries(filterByTime(startTimeField.getText(), endTimeField.getText(), logEntries));
+			if(validateTimeString(startTimeField.getText(), endTimeField.getText())){
+				displayFilteredEntries(filterByTime(startTimeField.getText(), endTimeField.getText(), logEntries));
+			}
+			else{
+				displayLogEntries();
+			}
 		});
-
 		minimalLevel.setValue(selectedLogLevel);
 	}
 
@@ -384,7 +389,6 @@ public class MainController implements Initializable {
 			return;
 		}
 		orderEntryListByChronology(logEntries);
-
 		for (MainLogEntry entry : logEntries) {
 			LogLevel logLevel = selectedLogLevel;
 			if (entry.getSeverity().ordinal() < logLevel.ordinal()) {
@@ -403,8 +407,24 @@ public class MainController implements Initializable {
 				TreeItem<Object> detailItem = new TreeItem<Object>(entry.getDetails());
 				item.getChildren().add(detailItem);
 			}
+			setMinAndMaxTimeToTextboxes(logEntries);
 			rootItem.getChildren().add(item);
 		}
+	}
+
+	private MainLogEntry getLastMainLogEntry(List<MainLogEntry> logEntries) {
+		return logEntries
+				.stream()
+				.reduce((first, second) -> second).get();
+	}
+
+	private MainLogEntry getFirstMainLogEntry(List<MainLogEntry> logEntries){
+		return logEntries.stream().findFirst().orElse(null);
+	}
+
+	private void setMinAndMaxTimeToTextboxes(List<MainLogEntry> logEntries){
+		endTimeField.setText(getLastMainLogEntry(logEntries).getTime());
+		startTimeField.setText(getFirstMainLogEntry(logEntries).getTime());
 	}
 
 	private void copySelectionToClipboard() {
