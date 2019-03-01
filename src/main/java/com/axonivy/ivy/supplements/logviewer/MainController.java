@@ -264,26 +264,27 @@ public class MainController implements Initializable {
 		});
 	}
 
-	private void configureFilter(){
+	private void configureFilter() {
 		startTimeField.setPromptText("StartTime");
 		endTimeField.setPromptText("EndTime");
 		applyNewFilter.setOnAction(event -> {
-			if(validateTimeString(startTimeField.getText(), endTimeField.getText())){
-				List<MainLogEntry> filteredEntries = filterByTime(startTimeField.getText(), endTimeField.getText(), logEntries);
+			if (validateTimeString(startTimeField.getText(), endTimeField.getText())) {
+				List<MainLogEntry> filteredEntries = filterByTime(startTimeField.getText(), endTimeField.getText(),
+						logEntries);
 				displayFilteredEntries(filteredEntries);
 				setMinAndMaxTimeToTextboxes(filteredEntries);
 			}
 		});
 	}
+
 	private void configureMinLogLevelSelection() {
 		minimalLevel.getItems().addAll(FXCollections.observableArrayList(LogLevel.valuesDesc()));
 		minimalLevel.setOnAction(event -> {
 			selectedLogLevel = minimalLevel.getValue();
 			clearSearch();
-			if(validateTimeString(startTimeField.getText(), endTimeField.getText())){
+			if (validateTimeString(startTimeField.getText(), endTimeField.getText())) {
 				displayFilteredEntries(filterByTime(startTimeField.getText(), endTimeField.getText(), logEntries));
-			}
-			else{
+			} else {
 				displayLogEntries();
 			}
 		});
@@ -348,7 +349,8 @@ public class MainController implements Initializable {
 				openFiles(files);
 				event.setDropCompleted(success);
 				event.consume();
-			}});
+			}
+		});
 	}
 
 	private void openFileDialog() {
@@ -357,7 +359,7 @@ public class MainController implements Initializable {
 
 		Stage stage = (Stage) treeAnchorPane.getScene().getWindow();
 		currentFiles = fileChooser.showOpenMultipleDialog(stage);
-		if(!currentFiles.isEmpty()) {
+		if (!currentFiles.isEmpty()) {
 			openFiles(currentFiles);
 		}
 	}
@@ -374,7 +376,7 @@ public class MainController implements Initializable {
 			e.printStackTrace();
 		}
 		for (File file : files) {
-			filepathLabel.setText(filepathLabel.getText() +" " + file.getAbsolutePath());
+			filepathLabel.setText(filepathLabel.getText() + " " + file.getAbsolutePath());
 		}
 		displayLogEntries();
 	}
@@ -413,16 +415,18 @@ public class MainController implements Initializable {
 	}
 
 	private MainLogEntry getLastMainLogEntry(List<MainLogEntry> logEntries) {
-		return logEntries
-				.stream()
-				.reduce((first, second) -> second).get();
+		return logEntries.stream()
+				.reduce((first, second) -> second)
+				.get();
 	}
 
-	private MainLogEntry getFirstMainLogEntry(List<MainLogEntry> logEntries){
-		return logEntries.stream().findFirst().orElse(null);
+	private MainLogEntry getFirstMainLogEntry(List<MainLogEntry> logEntries) {
+		return logEntries.stream()
+				.findFirst()
+				.orElse(null);
 	}
 
-	private void setMinAndMaxTimeToTextboxes(List<MainLogEntry> logEntries){
+	private void setMinAndMaxTimeToTextboxes(List<MainLogEntry> logEntries) {
 		endTimeField.setText(getLastMainLogEntry(logEntries).getTime());
 		startTimeField.setText(getFirstMainLogEntry(logEntries).getTime());
 	}
@@ -443,24 +447,24 @@ public class MainController implements Initializable {
 		return IconUtil.getIcon(level);
 	}
 
-	public static List<MainLogEntry> filterByTime(String start, String end, List<MainLogEntry> logEntries){
+	public static List<MainLogEntry> filterByTime(String start, String end, List<MainLogEntry> logEntries) {
 		LocalTime startTime = LocalTime.parse(start);
 		LocalTime endTime = LocalTime.parse(end);
-		if(startTime.isAfter(endTime) || endTime.isBefore(startTime)){
+		if (startTime.isAfter(endTime) || endTime.isBefore(startTime)) {
 			startTime = LocalTime.parse(end);
 			endTime = LocalTime.parse(start);
 		}
 		List<MainLogEntry> filteredEntries = new ArrayList<>();
 		for (MainLogEntry entry : logEntries) {
 			LocalTime entryTime = LocalTime.parse(entry.getTime());
-			if((!entryTime.isBefore(startTime)) && (!entryTime.isAfter(endTime))){
+			if ((!entryTime.isBefore(startTime)) && (!entryTime.isAfter(endTime))) {
 				filteredEntries.add(entry);
 			}
 		}
 		return filteredEntries;
 	}
 
-	private void displayFilteredEntries(List<MainLogEntry> filteredEntries){
+	private void displayFilteredEntries(List<MainLogEntry> filteredEntries) {
 		TreeItem<Object> rootItem = new TreeItem<Object>(new MainLogEntry("All", "All", LogLevel.DEBUG));
 		logTreeView.setRoot(rootItem);
 
@@ -479,27 +483,24 @@ public class MainController implements Initializable {
 
 	}
 
-	public static List<MainLogEntry> orderEntryListByChronology(List<MainLogEntry> logEntryList){
+	public static List<MainLogEntry> orderEntryListByChronology(List<MainLogEntry> logEntryList) {
 		Collections.sort(logEntryList);
 		return logEntryList;
 	}
 
-	public static Boolean validateTimeString(String time1, String time2){
-		if(!time1.isEmpty() && !time2.isEmpty()){
-			try{
+	public static Boolean validateTimeString(String time1, String time2) {
+		if (!time1.isEmpty() && !time2.isEmpty()) {
+			try {
 				LocalTime.parse(time1);
 				LocalTime.parse(time2);
 				return true;
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				new ExceptionDialog().showException(e, "Please enter  a valid timeformat (HH:mm:ss or HH:mm:ss.sss)");
 				return false;
 			}
-		}
-		else{
+		} else {
 			return false;
 		}
 	}
-
 
 }
