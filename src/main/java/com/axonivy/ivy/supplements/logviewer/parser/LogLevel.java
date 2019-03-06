@@ -21,13 +21,13 @@ public enum LogLevel {
 
 	/**
 	 * Turns a given String into the corresponding LogLevel
-	 * 
+	 *
 	 * @param value
 	 *            e.g. "WARN"
 	 * @return the figured out LogLevel, DEBUG if it could not find out which one
 	 */
 	public static LogLevel fromValue(String value) {
-		if (value == null || "".equals(value)) {
+		if (value == null || "".equals(value)){
 			return DEBUG;
 		}
 
@@ -39,7 +39,7 @@ public enum LogLevel {
 
 		return DEBUG;
 	}
-	
+
 	public static LogLevel[] valuesDesc() {
 		List<LogLevel> logLevels = Arrays.asList(LogLevel.values());
 		Collections.reverse(logLevels);

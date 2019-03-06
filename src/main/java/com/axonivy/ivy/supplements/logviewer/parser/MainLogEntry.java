@@ -1,11 +1,18 @@
 package com.axonivy.ivy.supplements.logviewer.parser;
 
-public class MainLogEntry {
+import java.time.LocalTime;
+
+public class MainLogEntry implements Comparable<MainLogEntry>{
 	private String originalTitleLine;
 	private String time;
 	private LogLevel severity;
 	private DetailLogEntry detailLogEntry;
-	
+
+	public MainLogEntry(String originalTitleLine, String time, LogLevel severity) {
+		this.originalTitleLine = originalTitleLine;
+		this.time = time;
+		this.severity = severity;
+	}
 
 	public void addDetailLogEntry(String detailLine) {
 		if(detailLogEntry == null) {
@@ -16,16 +23,10 @@ public class MainLogEntry {
 		}
 	}
 
-	public MainLogEntry(String originalTitleLine, String time, LogLevel severity) {
-		this.originalTitleLine = originalTitleLine;
-		this.time = time;
-		this.severity = severity;
-	}
-
 	public DetailLogEntry getDetailLogEntry() {
 		return detailLogEntry;
 	}
-	
+
 	public String getOriginalTitleLine() {
 		return originalTitleLine;
 	}
@@ -54,5 +55,12 @@ public class MainLogEntry {
 	@Override
 	public String toString() {
 		return getTitleLine();
+	}
+
+	@Override
+	public int compareTo(MainLogEntry o) {
+		LocalTime t2 = LocalTime.parse(this.getTime());
+		LocalTime t1 = LocalTime.parse(o.getTime());
+		return t2.compareTo(t1);
 	}
 }
