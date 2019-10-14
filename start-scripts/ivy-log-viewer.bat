@@ -1,1 +1,1 @@
-start javaw -jar "ivy-log-viewer.jar"
+start javaw --module-path $JAVA_FX_HOME/lib --add-modules javafx.controls,javafx.fxml -jar "ivy-log-viewer.jar"
