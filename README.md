@@ -6,7 +6,7 @@ Started as a simple JavaFX test project, but is actually useful as a small and s
 
 ## Requirements
 * Java 11 with JavaFX SDK installed (on Linux you need to install `openjfx` in addition to the JDK).
- * Set an environment variable **$JAVA_FX_HOME** pointing to the JavaFX SDK.
+    * Set an environment variable **$JAVA_FX_HOME** pointing to the JavaFX SDK.
 * Maven 3 and later for building.
 
 ## Installation
