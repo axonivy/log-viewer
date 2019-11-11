@@ -5,7 +5,7 @@
 
 	<groupId>com.axonivy.ivy.supplements</groupId>
 	<artifactId>ivy-log-viewer</artifactId>
-	<version>0.10.0</version>
+	<version>0.10.1</version>
 	<packaging>jar</packaging>
 
 	<name>ivy-log-viewer</name>
@@ -49,6 +49,7 @@
 	</dependencies>
 
 	<build>
+        <finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -68,6 +69,21 @@
 					</execution>
 				</executions>
 			</plugin>
+		    <plugin>
+		      <!-- Build an executable JAR -->
+		      <groupId>org.apache.maven.plugins</groupId>
+		      <artifactId>maven-jar-plugin</artifactId>
+		      <version>3.1.0</version>
+		      <configuration>
+		        <archive>
+		          <manifest>
+		            <addClasspath>true</addClasspath>
+		            <classpathPrefix>lib/</classpathPrefix>
+		            <mainClass>com.axonivy.ivy.supplements.logviewer.Main</mainClass>
+		          </manifest>
+		        </archive>
+		      </configuration>
+		    </plugin>
 		</plugins>
 	</build>
 
