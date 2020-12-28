@@ -1,0 +1,43 @@
+{
+    "version": 1,
+    "knownIssues": [
+        {
+            "issueID": "XIVY-2492",
+            "issueTitle": "Broken pipe when trying to load web assets like fonts or css files",
+            "fixedVersions": [
+                "7.0.5",
+                "7.2"
+            ],
+            "workaround": "It is possible to disable the logging of those exceptions by adding following to the log4jconfig.xml:\r\n    <!-- Prevent \"ClientAbortException: java.io.IOException: Broken pipe\" from filling the log -->\r\n    <category name=\"org.apache.myfaces.application.ResourceHandlerImpl\" class=\"ch.ivyteam.log.Logger\">\r\n    <priority value=\"FATAL\"\/>\r\n    <\/category>",
+            "matchExceptionParts": [
+                "org.apache.catalina.connector.ClientAbortException: java.io.IOException: Broken pipe",
+                "at ch.ivyteam.ivy.dialog.execution.jsf.controller.resource.IvyFacesResourceFilter.filter"
+            ]
+        },
+        {
+            "issueID": "XIVY-2538",
+            "issueTitle": "EmptyStackException occurs if a task is reseted and a user want to submit the form",
+            "fixedVersions": [
+                "6.0.14",
+                "7.0.6",
+                "7.2"
+            ],
+            "matchExceptionParts": [
+                "Caused by: java.util.EmptyStackException",
+                "ch.ivyteam.ivy.bpm.engine.internal.core.CallStack.checkEmptyStack"
+            ]
+        },
+        {
+            "issueID": "IVYPORTAL-5617",
+            "issueTitle": "PortalConnector throws 403",
+            "fixedVersions": [
+                "None"
+            ],
+            "workaround": "You should not have two portals running simultaneously. Try disabling the Portal in your default application. After rebooting your engine it should be fixed.",
+            "matchExceptionParts": [
+                "org.apache.axis2.AxisFault: Transport error: 403 Error",
+                "org.apache.axis2.transport.http.HTTPSender.handleResponse"
+            ]
+        }
+    ]
+}
